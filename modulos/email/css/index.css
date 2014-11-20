@@ -1,0 +1,19 @@
+#body td + td + td {
+	text-align: center;
+}
+#body td + td + td + td {
+	text-align: center;
+}
+#body td + td + td + td + td {
+	text-align: left;
+}
+#body td + td + td + td + td + td {
+	text-align: left;
+}
+#body td + td + td + td + td + td + td {
+	text-align: left;
+}
+#body td + td + td + td + td + td + td + td {
+	text-align: right;
+}
+

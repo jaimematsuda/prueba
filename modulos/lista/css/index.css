@@ -1,0 +1,26 @@
+#body input {
+	font-size: 12px;
+} 
+#body td + td + td + td {
+	text-align: right;
+}
+#body td + td + td + td + td {
+	text-align: right;
+}
+.verde:nth-child(odd) {
+	background-color: #CAEF8F;
+	color: #000000;
+}
+.verde:nth-child(even) {
+	background-color: #CAEF8F;
+	color: #000000;
+}
+.naranja:nth-child(odd) {
+	background-color: #FBC664;
+	color: #000000;
+}
+.naranja:nth-child(even) {
+	background-color: #FBC664;
+	color: #000000;
+}
+

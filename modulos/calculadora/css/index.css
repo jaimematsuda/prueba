@@ -1,0 +1,26 @@
+#body{
+	background:url(../images/banner.jpg) 0 0 no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%;
+	-o-background-size:100% 100%;
+	-webkit-background-size:100% 100%;
+	-khtml-background-size:100% 100%;
+}
+#body h2{
+	font-family:Verdana, Helvetica, sans-serif;
+	font-size:25px;
+	font-weight:bold;
+	color:#3B3B3B;
+}
+#body p{
+	font-size:17px;
+	line-height:20px;	
+	padding-left: 25px;
+	color: #32991F;
+}
+#body h4{
+	font-family:Verdana, Helvetica, sans-serif;
+	font-size:20px;
+	font-weight:bold;
+	text-decoration:blink;
+}

@@ -1,0 +1,74 @@
+<br />
+<form action="" method="post" enctype="multipart/form-data" onsubmit="return validausrmod(this)">
+	<fieldset>
+		<legend>Modificar Datos de Contacto</legend>
+		<label>Nombre :</label>
+		<input type ="text" id="nombre" name="nombre" size="30" readonly value="<?php echo $editarcontacto[0]['nombre'];?>" />
+		<input type ="checkbox" id="modnombre" name="nombreck" value="nombreck" onclick="cambiareadonly(this)" />Modificar<br />
+		<label>Email :</label>
+		<input type = "text" id="email" name="email" size="30" readonly value="<?php echo $editarcontacto[0]['email'];?>" />
+		<input type ="checkbox" id="modemail" name="emailck" value="emailck" onclick="cambiareadonly(this)" />Modificar<br />
+<?php dump($editarcontacto, true); ?>
+		<?php if (!isset($editarcontacto[1]['grupo'])) { ?>
+			<?php switch ($editarcontacto[0]['grupo']) {
+				case "Pollo":
+					if ($editarcontacto[0]['estgrp'] == "Activo" ) {
+						$check = "checked";
+					}else{
+						$check = "";
+					}
+					echo "<label>Grupo Pollo :</label>";
+					echo "<input type='checkbox' id='g_pollo' name='g_pollo' value='g_pollo' $check />";
+					echo "<input type='checkbox' id='g_pollock' name='g_pollock' value='g_pollock' /> :Modificar";
+					echo "<br />";
+					echo "<label>Grupo Papa :</label>";
+					echo "<input type='checkbox' id='g_papa' name='g_papa' value='g_papa' $check />";
+					echo "<input type='checkbox' id='g_papack' name='g_papack' value='g_papack' /> :Modificar";
+					break;
+				case "Papa":
+					if ($editarcontacto[0]['estgrp'] == "Activo") {
+						$check = "checked";
+					}else{
+						$check = "";
+					}
+					echo "<label>Grupo Pollo :</label>";
+					echo "<input type='checkbox' id='g_pollo' name='g_pollo' value='g_pollo' $check />";
+					echo "<br />";
+					echo "<label>Grupo Papa :</label>";
+					echo "<input type='checkbox' id='g_papa' name='g_papa' value='g_papa' $check />";
+					echo "<input type='checkbox' id='g_papa' name='g_papa' value='g_papa' />";
+					break;
+			} ?>
+		<?php }else{ ?>	
+			<label>Grupo Pollo :</label>
+			<?php if ($editarcontacto[0]['estgrp'] == "Activo") {
+				$check = "checked";
+			}else{
+				$check = "";
+			} ?>	
+			<input type="checkbox" id="g_pollo" name="g_pollo" value="g_pollo" <?php echo $check ?> />
+			<br />
+			<?php if ($editarcontacto[1]['estgrp'] == "Activo") {
+				$check = "checked";
+			}else{
+				$check = "";
+			} ?>	
+			<label>Grupo Papa :</label>
+			<input type="checkbox" id="g_papa" name="g_papa" value="g_papa" <?php echo $check ?> />
+		<?php } ?>
+		<br />
+		<label>Estado :</label>
+		<select id="estado" name="estado" disabled="disabled">
+			<?php if ($editarcontacto[0]['estmail'] == "Activo") { ?>
+				<option value='activo' selected>Activo</option>
+				<option value='inactivo'>Inactivo</option>
+			<?php }else{ ?>
+				<option value='activo'>Activo</option>
+				<option value='inactivo' selected>Inactivo</option>
+			<?php } ?>
+		</select>
+		<input type ="checkbox" id="modestado" name="estadock" value="estadock" onclick="cambiardisabled(this)" />Modificar<br />
+		<br />
+		<input type="submit" value="Modificar" />
+	</fieldset>
+</form><br />

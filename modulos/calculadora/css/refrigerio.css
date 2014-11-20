@@ -1,0 +1,36 @@
+/* CSS Document */
+
+#body fieldset {
+	font: 13px "Helvetica Neue", helvetica, arial, sans-serif;
+	color: #666;
+	background-color: #efefef;
+	padding:  50px 50px;
+	border: solid 1px #d3d3d3;
+	width: 350px;
+}
+
+#body legend {
+	color: #666;
+	font-weight: bold;
+	font-variant: small-caps;
+	background-color: #d3d3d3;
+	padding: 2px 6px;
+	margin-bottom: 8px;
+}
+
+#body label {
+	font-weight: bold;
+	line-height: normal;
+	text-align: right;
+	margin-right: 10px;
+	position: relative;
+	display: block;
+	float: left;
+	width: 150px;
+}
+
+.calref {
+	font-weight: bold;
+	font-size: 15px;
+	color: black;
+}

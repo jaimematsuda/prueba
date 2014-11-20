@@ -1,0 +1,196 @@
+<?php
+	$mensaje = "";
+	if(isset($_GET["id"])) {
+		$id = addslashes(trim($_GET["id"]));
+		if(!is_dir("modulos/$modulo")) {
+			die("Modulo no existe");
+		}
+	}
+	$js_vista = array();
+	$js_vista[] = $dir_js."/contactos_editar.js";
+	require "modelo/contacto.php";
+	// si hay alguna modificacion se procede a comparar con el anterior
+	// si no es igual se procedera al cambio
+
+	if (!empty ($_POST) ) { 
+dump($_POST, true);
+		mysql_query("BEGIN");
+		$concatenado = "";
+		if (isset($_POST["nombreck"])) {
+			$nombre = addslashes(trim($_POST["nombre"]));
+			$concatenado = "nombre='$nombre', ";
+		}
+		if (isset($_POST["emailck"])) {			
+			$email = addslashes(trim($_POST["email"]));
+			$concatenado = $concatenado."email='$email'";
+		}
+		if (!empty($concatenado)) {
+			$query = "UPDATE emails SET $concatenado WHERE id_email=$id";
+			contacto_modify($query, $db);
+		}
+		if (isset($_POST["estadock"])) {			
+			$estado = addslashes(trim($_POST["estado"]));
+			if ($estado == "activo") {
+				$id_estado = 1;
+			}else{
+				$id_estado = 2;
+			}
+		}
+		if (!empty($estado)) {
+			$query = "UPDATE rel_estados_emails SET id_estado='$id_estado' WHERE id_email=$id";
+			contacto_modify($query, $db);
+		}
+		if (isset($_POST["g_pollock"]) OR isset($_POST["g_papack"])) {
+			$rela = addslashes(trim($_POST["rel_maila"]));
+			$grpa = addslashes(trim($_POST["grpa"]));
+			if (isset($_POST["rel_mailb"])) {
+				$relb = addslashes(trim($_POST["rel_mailb"]));
+				$grpb = addslashes(trim($_POST["grpb"]));
+			}else{
+				$relb = "";
+				$grpb = "";
+			}
+			switch (true) {
+				case (isset($_POST["g_pollock"]) AND !isset($_POST["g_papack"])):
+					switch ("Pollo") {
+						case ($_POST["grpa"]):
+							if (isset($_POST["g_pollo"])) {
+								$estado = 1;
+							}else{
+								$estado = 2;
+							}
+							$query = "UPDATE rel_estados_email_use_grps SET id_estado=$estado WHERE id_email_use_grp=$rela";
+							break;
+						case $grpb:
+							if (isset($_POST["g_pollo"])) {
+								$estado = 1;
+							}else{
+								$estado = 2;
+							}
+							$query = "UPDATE rel_estados_email_use_grps SET id_estado=$estado WHERE id_email_use_grp=$relb";
+							break;
+						default:
+							switch ("Pollo") {
+								case ($_POST["grpa"]):
+									$rel = addslashes(trim($_POST["rel_maila"]));
+									break;
+								case ($_POST["grpb"]):
+									$rel = addslashes(trim($_POST["rel_mailb"]));
+									break;
+							}
+							$query = "INSERT INTO emails_users_grupos(id_email, id_grupo) VALUES($id, 1)";
+							$rel = contacto_modify($query, $db);
+							$query = "INSERT INTO rel_estados_email_use_grps(id_email_use_grp, id_estado) VALUES($rel, 1)";
+					}
+					contacto_modify($query, $db);
+					break;
+				case (isset($_POST["g_papack"]) AND !isset($_POST["g_pollock"])):
+					switch ("Papa") {
+						case ($_POST["grpa"]):
+							if (isset($_POST["g_papa"])) {
+								$estado = 1;
+							}else{
+								$estado = 2;
+							}
+							$query = "UPDATE rel_estados_email_use_grps SET id_estado=$estado WHERE id_email_use_grp=$rela";
+							break;
+						case $grpb:
+							if (isset($_POST["g_papa"])) {
+								$estado = 1;
+							}else{
+								$estado = 2;
+							}
+							$query = "UPDATE rel_estados_email_use_grps SET id_estado=$estado WHERE id_email_use_grp=$relb";
+							break;
+						default:
+							$query = "INSERT INTO emails_users_grupos(id_email, id_grupo) VALUES($id, 2)";
+							$rel = contacto_modify($query, $db);
+							$query = "INSERT INTO rel_estados_email_use_grps(id_email_use_grp, id_estado) VALUES($rel, 1)";
+					}
+					contacto_modify($query, $db);
+					break;
+				case (isset($_POST["g_pollock"]) AND isset($_POST["g_papack"])):
+					if (isset($_POST["grpa"]) AND isset($_POST["grpb"])) {
+						switch ("Pollo") {
+							case ($_POST["grpa"]):
+								if (isset($_POST["g_pollo"])) {
+									$estado = 1;
+								}else{
+									$estado = 2;
+								}
+								$query = "UPDATE rel_estados_email_use_grps SET id_estado=$estado WHERE id_email_use_grp=$rela";
+								break;
+							case ($_POST["grpb"]):
+								if (isset($_POST["g_pollo"])) {
+									$estado = 1;
+								}else{
+									$estado = 2;
+								}
+								$query = "UPDATE rel_estados_email_use_grps SET id_estado=$estado WHERE id_email_use_grp=$relb";
+								break;
+						}
+						contacto_modify($query, $db);
+					}else{
+						if ($_POST["grpa"] == "Pollo") {
+							if (isset($_POST["g_pollo"])) {
+								$estado = 1;
+							}else{
+								$estado = 2;
+							}
+							$query = "UPDATE rel_estados_email_use_grps SET id_estado=$estado WHERE id_email_use_grp=$rela";
+							contacto_modify($query, $db);
+						}else{	
+							$query = "INSERT INTO emails_users_grupos(id_email, id_grupo) VALUES($id, 2)";
+							$rel = contacto_modify($query, $db);
+							$query = "INSERT INTO rel_estados_email_use_grps(id_email_use_grp, id_estado) VALUES($rel, 1)";
+							contacto_modify($query, $db);
+						}
+					}
+					if (isset($_POST["grpa"]) AND isset($_POST["grpb"])) {
+						switch ("Papa") {
+							case ($_POST["grpa"]):
+								if (isset($_POST["g_papa"])) {
+									$estado = 1;
+								}else{
+									$estado = 2;
+								}
+								$query = "UPDATE rel_estados_email_use_grps SET id_estado=$estado WHERE id_email_use_grp=$rela";
+								break;
+							case ($_POST["grpb"]):
+								if (isset($_POST["g_papa"])) {
+									$estado = 1;
+								}else{
+									$estado = 2;
+								}
+								$query = "UPDATE rel_estados_email_use_grps SET id_estado=$estado WHERE id_email_use_grp=$relb";
+								break;
+						}
+						contacto_modify($query, $db);
+					}else{
+						if ($_POST["grpa"] == "Papa") {
+							if (isset($_POST["g_papa"])) {
+								$estado = 1;
+							}else{
+								$estado = 2;
+							}
+							$query = "UPDATE rel_estados_email_use_grps SET id_estado=$estado WHERE id_email_use_grp=$rela";
+							contacto_modify($query, $db);
+						}else{	
+							$query = "INSERT INTO emails_users_grupos(id_email, id_grupo) VALUES($id, 2)";
+							$rel = contacto_modify($query, $db);
+							$query = "INSERT INTO rel_estados_email_use_grps(id_email_use_grp, id_estado) VALUES($rel, 1)";
+							contacto_modify($query, $db);
+						}
+					}
+					break;	
+			}
+		}
+		mysql_query("COMMIT");
+		$lista = list_contacto($db);
+		$vista = $dir_vista."/contactos_lista.php";
+	}else{
+		$editarcontacto = contacto_data($id, $db);
+		$vista = $dir_vista."/contactos_editar.php";
+	}
+require_once "temas/$tema/tema.php";
+?>
