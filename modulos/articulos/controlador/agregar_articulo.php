@@ -10,15 +10,13 @@
 		$unidad = addslashes(trim($_POST["unidad"]));
 		$articulo_documento = addslashes(trim($_POST["articulo_documento"]));
 		$presentacion = addslashes(trim($_POST["presentacion"]));
-		if (agregar_articulo($proveedor, $articulo_sistema, $unidad, $articulo_documento, $presentacion, $db)){
+		if (agregar_articulo($proveedor, $articulo_sistema, $unidad, 
+			$articulo_documento, $presentacion, $db)){
 			echo "<script>alert('El registro se creo con exito')</script>";
 		}else{
 			mysql_query("ROLLBACK");
 		}
 	}
-
-	//*** Array de para Listar de Proveedores ***
-
 
 	// Aca el controlador llama a la vista 
 	$vista = $dir_vista."/agregar_articulo.php";
@@ -27,18 +25,22 @@
 	$css_vista = array();	
 	$css_vista[] = $dir_css."/agregar_articulo.css";
 
+	$js_vista = array();
+	$js_vista[] = "js/jquery_plugin/jquery.mockjax.js";
+	$js_vista[] = "js/jquery_plugin/jquery.validate.min.js";
+
 	$jq_vista = "$(document).ready(function(){
 					$(\"#proveedor\").autocomplete({
-						source: \"modelo/buscarproveedor.php\",
+						source: \"js/json/buscarproveedor.php\",
 						minLengh: 2,
 					});
 					$(\"#articulo_sistema\").autocomplete({
-						source: \"modelo/buscararticulosistema.php\",
+						source: \"js/json/buscararticulosistema.php\",
 						minLengh: 2,
 					});
 					$(\"#articulo_sistema\").focusout(function(){
 						$.ajax({
-							url: \"modelo/buscarunidad.php\",
+							url: \"js/json/buscarunidad.php\",
 							type: 'POST',
 							dataType: 'json',
 							data: {articulosistema: $(\"#articulo_sistema\").val()},

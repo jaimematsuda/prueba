@@ -24,7 +24,7 @@ switch($pagina){
 		}
 		$controlador = $pagina.".php";
 		break;
-	case "modificar_articulo":
+	case "editar_articulo":
 		if((!is_editor()) && (!is_admin())) {
 			die ("Esta zona esta restringida a los editores y administaradores del sistema");
 		}

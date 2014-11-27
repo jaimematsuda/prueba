@@ -66,7 +66,7 @@
 					<?php } ?>
 					<?php if(is_session()) { ?>
 						<li><a href="index.php?modulo=lista">Lista Precios</a></li>
-						<li><a href="index.php?modulo=articulos">Lista Artículos</a></li>
+						<li><a href="index.php?modulo=articulos">Artículos</a></li>
 						<li><a href="index.php?modulo=calculadora">Calculadora</a></li>
 					<?php } ?>
 				</ul>
