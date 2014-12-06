@@ -195,3 +195,7 @@ ul{
 	font:12px/24px Verdana, Arial, Helvetica, sans-serif; 
 	margin:26px 0 0; padding:0px;
 }
+
+.resaltar {
+	font-weight: bold;
+}
