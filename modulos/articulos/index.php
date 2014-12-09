@@ -38,6 +38,7 @@ switch($pagina){
 		break;
 	default:
 		$controlador = "index.php";
+		$pagina = "index";
 }
 
 // incluyo el controlador de la pagina solitada
