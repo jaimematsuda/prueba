@@ -5,7 +5,7 @@
 		<title><?php echo $site_name;?></title>
 		<link href="temas/menuizquierda/css/menuizquierda.css" rel="stylesheet" type="text/css" />
 		<link href="js/jquery-ui/themes/lightness/1.11.1/jquery-ui.css" rel="stylesheet" type="text/css" />
-		<script type="text/javascript" src="js/jquery-min/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery-min/1.7.2/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui/1.10.2/jquery-ui.min.js"></script>
 
 		<!-- Inclusion dinamica de los css de las vistas -->

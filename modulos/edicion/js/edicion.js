@@ -2,7 +2,7 @@ function cambiareadonly(input)
 {
     var checknam = input.value;
     var checkval = checknam.substring(0, checknam.length-2);
-    if ($("#"+checknam).attr("checked")) {
+    if ($("#"+checknam).attr("checked")){
         $("#"+checkval).removeAttr("readonly").focus();
     }else{
         $("#"+checkval).attr("readonly",true);
@@ -13,7 +13,7 @@ function cambiareadonlyborrar(input)
 {
     var checknam = input.value;
     var checkval = checknam.substring(0, checknam.length-2);
-    if ($("#"+checknam).attr("checked")) {
+    if ($("#"+checknam).attr("checked")){
         $("#"+checkval).removeAttr("readonly").focus();
 		$("#"+checkval).attr("value", "");
     }else{
