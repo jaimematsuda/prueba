@@ -43,6 +43,23 @@
 	list-style-type: none;
 }
 
+.checklist tfoot td{
+	margin: 15px;
+}
+
+.checklist tfoot h3 {
+	text-decoration: underline;
+}
+
+.checklist tfoot h4 {
+	text-align: center;
+	font-size: 25px;
+}
+
+.checklist tfoot li {
+	padding: 5px 0;
+}
+
 .modalmask {
 	position: fixed;
 	top: 0;

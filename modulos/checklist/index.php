@@ -15,7 +15,7 @@ switch($pagina){
 	case "index":
 		$controlador = $pagina.".php";
 		break;
-	case "check_admin":
+	case "check_admin_rest":
 		$controlador = $pagina.".php";
 		break;
 	case "check_cajero":
