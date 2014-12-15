@@ -1,6 +1,6 @@
 <div class="checklist">
 	<table border="1">
-		<caption>CHECK LIST ADMINISTRADORES</caption>
+		<caption>CHECK LIST ADMINISTRADORES RESTAURANTE</caption>
 		<tbody>
 			<tr>
 				<th colspan="4">EN LA APERTURA</th>
@@ -8,7 +8,9 @@
 			<tr>
 				<td>1</td>
 				<td><input type="checkbox"></td>
-				<td><p>Entregar <span class="resaltar">REQUERIMIENTOS </span>a las áreas según lo registrado en los formatos correspondientes.</p></td>
+				<td>
+					<p>Entregar <span class="resaltar">REQUERIMIENTOS </span>a las áreas según lo registrado en los formatos correspondientes.</p>
+				</td>
 				<td>
 				</td>
 			</tr>
@@ -18,7 +20,8 @@
 			<tr>
 				<td>2</td>
 				<td><input type="checkbox"></td>
-				<td><p><span class="resaltar">INGRESAR DOCUMENTOS</span>, facturas, guías de remisión, recibos de servicios, guias internas (ingreso por préstamo o devolucón de mercadería) en el módulo de "Almacén". Verificar que la fecha de emisión registrada en el sistema corresponda a la fecha de emisión del documento.<span class="resaltar">Grabar</span>, luego de ingresar todos los documentos revisar uno por uno y <span class="resaltar">Procesar.</span></p> 
+				<td>
+					<p><span class="resaltar">INGRESAR DOCUMENTOS</span>, facturas, guías de remisión, recibos de servicios, guias internas (ingreso por préstamo o devolucón de mercadería) en el módulo de "Almacén". Verificar que la fecha de emisión registrada en el sistema corresponda a la fecha de emisión del documento.<span class="resaltar">Grabar</span>, luego de ingresar todos los documentos revisar uno por uno y <span class="resaltar">Procesar.</span></p> 
 					<br />
 					<table>
 						<tr>
@@ -48,8 +51,10 @@
 						<a href="#modal1">AVINKA,</a>
 						<a href="#modal2">EDELNOR,</a>
 						<a href="#modal3">CÁLIDDA,</a>
-					</p><br />
-					<h2>EXCEPCIONES:</h2><br />
+					</p>
+					<br />
+					<h2>EXCEPCIONES:</h2>
+					<br />
 					<p>Las facturas de ZETAGAS deben ingresarse con PERCEPCIÓN.</p>
 					<p>Las facturas de SAN FERNANDO que viene con CHULETA hay una diferencia en la PERCEPCIÓN del sistema contra el documento, PROCESARLO.</p>
 					<p></p>
@@ -86,7 +91,9 @@
 			<tr>
 				<td>3</td>
 				<td><input type="checkbox"></td>
-				<td><p><span class="resaltar">CANJEAR </span>las guías por facturas, colocar la fecha de emisión de la factura en el campo de fecha de emisión del sistema y la fecha de ingreso correspondiente. <span class="resaltar">Graba y Procesa.</span></p></td>
+				<td>
+					<p><span class="resaltar">CANJEAR </span>las guías por facturas, colocar la fecha de emisión de la factura en el campo de fecha de emisión del sistema y la fecha de ingreso correspondiente. <span class="resaltar">Graba y Procesa.</span></p>
+				</td>
 				<td>
 					<div id="item_1" class="item tooltipleft">ruta
 						<div class="tooltip_description" style="display: none" title="MÓDULO ALMACÉN">
@@ -101,7 +108,9 @@
 			<tr>
 				<td>4</td>
 				<td><input type="checkbox"></td>
-				<td><p><span class="resaltar">NOTA DE CREDITO</span>, ingresar el número de la nota de crédito, ingresar a que factura le corresponde haciendo uso de la lupa, tipo de nota de crédito (por descuento, por artículo). Para las facturas de San Fernando que se devuelve pollo, usar la opción por Artículo, en descripcion colocar el motivo de devolución, dar click en "Modificar", ingresar la cantidad. <span class="resaltar">Graba y Procesa.</span></p></td>
+				<td>
+					<p><span class="resaltar">NOTA DE CREDITO</span>, ingresar el número de la nota de crédito, ingresar a que factura le corresponde haciendo uso de la lupa, tipo de nota de crédito (por descuento, por artículo). Para las facturas de San Fernando que se devuelve pollo, usar la opción por Artículo, en descripcion colocar el motivo de devolución, dar click en "Modificar", ingresar la cantidad. <span class="resaltar">Graba y Procesa.</span></p>
+				</td>
 				<td>
 					<div id="item_1" class="item tooltipleft">ruta
 						<div class="tooltip_description" style="display: none" title="MÓDULO ALMACÉN">
@@ -116,7 +125,8 @@
 			<tr>
 				<td>5</td>
 				<td><input type="checkbox"></td>
-				<td><p>Ingresar los documentos de <span class="resaltar">EGRESOS DE CAJA </span>(boletas, Facturas, Recibos x Honorarios, Recibos internos) en el <span class="resaltar">MÓDULO ALMACÉN. </span></p>
+				<td>
+					<p>Ingresar los documentos de <span class="resaltar">EGRESOS DE CAJA </span>(boletas, Facturas, Recibos x Honorarios, Recibos internos) en el <span class="resaltar">MÓDULO ALMACÉN. </span></p>
 					<br />
 					<ul>
 						<li>Los insumos que se compren para ser utilizados para los productos de venta, se debe seleccionar el el sub almacén correspondiente.</li>
@@ -124,6 +134,7 @@
 					</ul>
 					<br />
 					<p><span class="resaltar">Grabar, Procesar y Pago Rápido</span></p></td>
+				</td>
 				<td>
 					<div id="item_1" class="item tooltipleft">ruta
 						<div class="tooltip_description" style="display: none" title="MÓDULO ALMACÉN">
@@ -228,12 +239,13 @@
 			<tr>
 				<td>10</td>
 				<td><input type="checkbox"></td>
-				<td><p>Verificar en el <span class="resaltar">KARDEX </span>en el área de <span class="resaltar">Cocina, </span>si el total de <span class="resaltar">"Pollo"</span> coincide con los documentos ingresados más el saldo anterior, si coincide pasar al siguiente paso, si no, verificar:  </p>
-				<br />
-				<ul>
-					<li>Si estan correctos las cantidades de los documentos ingresados.</li>
-					<li>Si el Pollo o Pollo Broaster pieza ha sido ingresado a Almacén Central, realizar el REQUERIMIENTO a Cocina.</li>
-				</ul>
+				<td>
+					<p>Verificar en el <span class="resaltar">KARDEX </span>en el área de <span class="resaltar">Cocina, </span>si el total de <span class="resaltar">"Pollo"</span> coincide con los documentos ingresados más el saldo anterior, si coincide pasar al siguiente paso, si no, verificar:  </p>
+					<br />
+					<ul>
+						<li>Si estan correctos las cantidades de los documentos ingresados.</li>
+						<li>Si el Pollo o Pollo Broaster pieza ha sido ingresado a Almacén Central, realizar el REQUERIMIENTO a Cocina.</li>
+					</ul>
 				</td>
 				<td>
 					<div id="item_1" class="item tooltipleft">ruta
@@ -300,11 +312,12 @@
 			<tr>
 				<td>13</td>
 				<td><input type="checkbox"></td>
-				<td><p>Registrar la <span class="resaltar">TRANSFERENCIA</span> del área de <span class="resaltar">Cocina a Parrilla, </span>de:</p>
-				<br />
-				<ul>
-					<li>Yuquitas con queso (solo, si se realizó la orden de producción en el punto anterior).</span></li>
-				</ul>
+				<td>
+					<p>Registrar la <span class="resaltar">TRANSFERENCIA</span> del área de <span class="resaltar">Cocina a Parrilla, </span>de:</p>
+					<br />
+					<ul>
+						<li>Yuquitas con queso (solo, si se realizó la orden de producción en el punto anterior).</span></li>
+					</ul>
 				</td>
 				<td>
 					<div id="item_1" class="item tooltipleft">ruta
@@ -320,26 +333,26 @@
 				<td>14</td>
 				<td><input type="checkbox"></td>
 				<td><p>Registrar el <span class="resaltar">ALMUERZO DE PERSONAL.</span> Por ejemplo:</p>
-				<br />
-				<ul>
-					<li>Si el personal comió "1/4, 1/8, 1 Pza Broaster con papas y ensalda".</span></li>
 					<br />
 					<ul>
-						<li>Se comandará en <span class="resaltar">CAJA </span>y se emitirá como <span class="resaltar">Cortesía - Almuerzo de Personal. </span>(utilizar: pieza de pollo broster personal, 1/4 personal, 1/8 personal).</li>
+						<li>Si el personal comió "1/4, 1/8, 1 Pza Broaster con papas y ensalda".</span></li>
+						<br />
+						<ul>
+							<li>Se comandará en <span class="resaltar">CAJA </span>y se emitirá como <span class="resaltar">Cortesía - Almuerzo de Personal. </span>(utilizar: pieza de pollo broster personal, 1/4 personal, 1/8 personal).</li>
+						</ul>
+						<br />
+						<li>Si se uso "Pollo Crudo", Pollo broaster pieza, arroz corriente, papa y demás insumos para preparar el Almuerzo.</li>
+						<br />
+						<ul>
+							<li>Realizar la, <span class="resaltar">SALIDA </span>en el área de <span class="resaltar">Cocina </span>de los productos, imprimirlo y lo firma el Administrador y el responsable de Cocina.</li>
+						</ul>
+						<br />
+						<li>Si se uso "Pollo Cocido" para preparar el Almuerzo</li>
+						<br />
+						<ul>
+							<li>Realizar la, <span class="resaltar">SALIDA </span>en el área de <span class="resaltar">Horno, </span>imprimirlo y lo firma el Adiministrador y el responsable de Horno.</li>
+						</ul>
 					</ul>
-					<br />
-					<li>Si se uso "Pollo Crudo", Pollo broaster pieza, arroz corriente, papa y demás insumos para preparar el Almuerzo.</li>
-					<br />
-					<ul>
-						<li>Realizar la, <span class="resaltar">SALIDA </span>en el área de <span class="resaltar">Cocina de los productos, </span>imprimirlo y lo firma el Administrador y el responsable de Cocina.</li>
-					</ul>
-					<br />
-					<li>Si se uso "Pollo Cocido" para preparar el Almuerzo</li>
-					<br />
-					<ul>
-						<li>Realizar la, <span class="resaltar">SALIDA </span>en el área de <span class="resaltar">Horno, </span>imprimirlo y lo firma el Adiministrador y el responsable de Horno.</li>
-					</ul>
-				</ul>
 				</td>
 				<td>
 					<div id="item_1" class="item tooltipleft">ruta
@@ -377,8 +390,7 @@
 				<td>
 					<p>Verificar que se haya registrado <span class="resaltar">TODOS LOS EGRESOS DE CAJA, </span>en el módulo <span class="resaltar">ALMACÉN.</span></p>
 				</td>
-				<td>
-				</td>
+				<td></td>
 			</tr>
 			<tr>
 				<td>17</td>
@@ -386,8 +398,7 @@
 				<td>
 					<p>Semanalmente registrar los <span class="resaltar">GASTOS DE PLANILLA, </span>(sueldos), gratificaciones (según cronograma), movilidad semanal, fin de mes, etc.</p>
 				</td>
-				<td>
-				</td>
+				<td></td>
 			</tr>
 			<tr>
 				<td>18</td>
@@ -395,14 +406,13 @@
 				<td>
 					<p>Verificar que el personal de las áreas haya realizado el registro de <span class="resaltar">REQUERIMIENTO, </span>de roductos para el día siguiente</p>
 				</td>
-				<td>
-				</td>
+				<td></td>
 			</tr>
 			<tr>
 				<td>19</td>
 				<td><input type="checkbox"></td>
 				<td>
-					<p>Realizar la <span class="resaltar">TRANSFERENCIA, </span>de <span class="resaltar">Cocina a Horno, </span>del <span class="resaltar">Pollo y la Papa.</p>
+					<p>Realizar la <span class="resaltar">TRANSFERENCIA, </span>de <span class="resaltar">Cocina a Horno, </span>del consumo de<span class="resaltar">Pollo y la Papa.</p>
 					<br />
 					<p>Restar: el Stock Actual (sistema) menos el Stock Final Fisico (finales).</p>
 				</td>
@@ -420,7 +430,7 @@
 				<td>20</td>
 				<td><input type="checkbox"></td>
 				<td>
-					<p>Realizar el <span class="resaltar">REQUERIMIENTO, </span>de <span class="resaltar">Cocina, </span>de la <span class="resaltar">Lechuga. </p>
+					<p>Realizar el <span class="resaltar">REQUERIMIENTO, </span>de <span class="resaltar">Cocina, </span>del consumo de <span class="resaltar">Lechuga. </p>
 					<br />
 					<p>Restar: el Stock Actual (sistema) menos el Stock Final Fisico (finales).</p>
 				</td>
@@ -438,7 +448,7 @@
 				<td>21</td>
 				<td><input type="checkbox"></td>
 				<td>
-					<p>Realizar la <span class="resaltar">SALIDA, </span>de <span class="resaltar">Horno, </span>del <span class="resaltar">Carbón. </span></p>
+					<p>Realizar la <span class="resaltar">SALIDA, </span>de <span class="resaltar">Horno, </span>del consumo de <span class="resaltar">Carbón. </span></p>
 					<br />
 					<p>Restar: el Stock Actual (sistema) menos el Stock Final Fisico (finales).</p>
 				</td>
@@ -460,7 +470,7 @@
 				<td><input type="checkbox"></td>
 				<td>Verificar que el cajero haya <span class="resaltar">cuadrado caja y cerrado el "Turno de Caja".</span></td>
 				<td></td>
-			<tr>	
+			</tr>	
 			<tr>
 				<td>23</td>
 				<td><input type="checkbox"></td>

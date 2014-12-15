@@ -130,3 +130,7 @@
 .hoverRuta:hover .mostrarRuta {
 	display: block;
 }
+
+#body table table td {
+	padding: 2px 8px;
+}
