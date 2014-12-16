@@ -11,8 +11,7 @@
 				<td>
 					<p>Entregar <span class="resaltar">REQUERIMIENTOS </span>a las áreas según lo registrado en los formatos correspondientes.</p>
 				</td>
-				<td>
-				</td>
+				<td></td>
 			</tr>
 			<tr>
 				<th colspan="4">DURANTE EL DÍA</th>
@@ -23,7 +22,7 @@
 				<td>
 					<p><span class="resaltar">INGRESAR DOCUMENTOS</span>, facturas, guías de remisión, recibos de servicios, guias internas (ingreso por préstamo o devolucón de mercadería) en el módulo de "Almacén". Verificar que la fecha de emisión registrada en el sistema corresponda a la fecha de emisión del documento.<span class="resaltar">Grabar</span>, luego de ingresar todos los documentos revisar uno por uno y <span class="resaltar">Procesar.</span></p> 
 					<br />
-					<p>Nota: Redondear los centimos en el sistema para que cuadre con el documento.</p>
+					<p>NOTA: Redondear los centimos en el sistema para que cuadre con el documento.</p>
 					<br />
 					<table>
 						<tr>
@@ -48,20 +47,27 @@
 						</tr>
 					</table>
 					<br />
+					<h2>NO LLEVAN IGV (quitar check de IGV):</h2>
+					<br />
+					<ul>
+						<li>GUIAS INTERNAS (PRESTAMOS / DEVOLUCIONES).</li>
+					</ul>
+					<br />
+					<h2>EXCEPCIONES:</h2>
+					<br />
+					<ul>
+						<li>Las facturas de ZETAGAS deben ingresarse con PERCEPCIÓN.</li>
+						<li>Las facturas de SAN FERNANDO que viene con CHULETA, siempre va haber una diferencia en la PERCEPCIÓN del sistema contra el documento, PROCESARLO.</li>
+					</ul>
+					<br />
+					<h2>CONSIDERACIONES: <a href="#modal20">(click aqui para ver)</a></h2>
+					<br />
 					<p>
 						Ejemplos de documentos:
 						<a href="#modal1">AVINKA,</a>
 						<a href="#modal2">EDELNOR,</a>
 						<a href="#modal3">CÁLIDDA,</a>
 					</p>
-					<br />
-					<h2>CONSIDERACIONES: <a href="#modal20">(click aqui para ver)</a></h2>
-					<br />
-					<h2>EXCEPCIONES:</h2>
-					<br />
-					<p>Las facturas de ZETAGAS deben ingresarse con PERCEPCIÓN.</p>
-					<p>Las facturas de SAN FERNANDO que viene con CHULETA, siempre va haber una diferencia en la PERCEPCIÓN del sistema contra el documento, PROCESARLO.</p>
-					<p></p>
 					<div id="modal1" class="modalmask">
 						<div class="modalbox resize">
 							<a href="#close" title="Close" class="close">X</a>
@@ -86,9 +92,8 @@
 						<div class="modalbox resize">
 							<a href="#close" title="Close" class="close">X</a>
 							<ul>
-								<li>RECIBO POR HONORARIO, RECIBOS INTERNOS, BOLETAS DE VENTA, GUIAS INTERNAS (PRESTAMOS / DEVOLUCIÓN) no llevan IGV, por ello quitar el check de IGV.</li>
-								<li>RECIBO INTERNO se utliza para los productos y servicios que no hay documento sustentatorio (caso excepcional), como movilidad, salida para pago de planilla. El RUC es 00000000, el proveedor es GASTO DE TIENDA.</li>
-								<li>REFRIGERIO. En el registro de las compras para almuerzo, si los artículos comprados tienen IGV, registralo com REFRIGERIO AFECTO A IGV, y los artículos que no son afectos a IGV (verduras, champiñones crudos, etc.) como REFRIGERIO INAFECTO A IGV.</li>
+								<li>Ingresar los datos del documento, la fecha de emisión es la que dice el documento, y la fecha de ingreso es la fecha de recepción de la mercadería, “GRABAR”, seguir el proceso hasta el último documento. Comparar que los datos, Sub-total, IGV, Percepción, y Total que figuran en el documento físico sean iguales al registro en el sistema luego de verificar todos los documentos generados y si los datos están correctos,  “PROCESAR”.</li>
+								<li>En el caso un proveedor emita una NOTA DE CRÉDITO por una factura errónea, el documento debe ser ingresado tal cual llega físicamente según el “Instructivo de Almacén y costos”. Si el proveedor en vez de emitir una nota de crédito emitirá una nueva factura, ingresarla con una guía de remisión interna con la razón social del proveedor y luego canjearla cuando llegue la factura modificada. (Siguiendo las indicaciones de auditoría)</li>
 							</ul>
 						</div>
 					</div>
@@ -147,7 +152,28 @@
 						<li>Todo lo demas se ingresa al área de ALMACÉN CENTRAL.</p></li> 
 					</ul>
 					<br />
-					<p><span class="resaltar">Grabar, Procesar y Pago Rápido</span></p></td>
+					<p><span class="resaltar">Grabar, Procesar </span><span class="resaltar-rojo">y PAGO RÁPIDO</p>
+					<br />
+					<h2>NO LLEVAN IGV (quitar check de IGV):</h2>
+					<br />
+					<ul>
+						<li>RECIBO POR HONORARIO.</li>
+						<li>REBIBOS INTERNOS.</li>
+						<li>BOLETAS DE VENTA.</li>
+					</ul>
+					<br />
+					<h2>CONSIDERACIONES: <a href="#modal21">(click aqui para ver)</a></h2>
+					<br />
+					<div id="modal21" class="modalmask">
+						<div class="modalbox resize">
+							<a href="#close" title="Close" class="close">X</a>
+							<ul>
+								<li>Los egresos de caja ingresar al módulo de Almacén, “GRABAR”, revisar, “PROCESAR”, y cancelar con el botón “PAGO RAPIDO” (no olvidar de dar pago rápido, de lo contrario el sistema lo considera como documento por pagar).</li>
+								<li>RECIBO INTERNO se utiliza para productos y servicios que no hay documento sustentatorio (caso excepcional), como movilidad, salida para pago de planilla. El RUC es 00000000, el proveedor es GASTO DE TIENDA.</li>
+								<li>REFRIGERIO. En el registro de las compras para almuerzo si los artículos comprados tienen IGV, registrarlo como REFRIGERIO AFECTO A IGV, y los artículos que no son afectos a IGV (verduras, champiñones crudos, etc.), como REFRIGERIO INAFECTO A IGV.</li>
+							</ul>
+						</div>
+					</div>
 				</td>
 				<td>
 					<div id="item_1" class="item tooltipleft">ruta
@@ -548,35 +574,5 @@
 				</td>
 			</tr>
 		</tbody>
-		<tfoot>
-			<tr>
-				<td colspan="4">
-					<h4>Anexo</h4>
-					<br />
-					<h3>Ingreso de Documentos</h3>
-					<br />
-					<p>En el caso un proveedor emita una NOTA DE CRÉDITO por una factura errónea, el documento debe ser ingresado tal cual llega físicamente según el “Instructivo de Almacén y costos”. Si el proveedor en vez de emitir una nota de crédito emitirá una nueva factura, ingresarla con una guía de remisión interna con la razón social del proveedor y luego canjearla cuando llegue la factura modificada. (Siguiendo las indicaciones de auditoría)</p>
-					<br />
-    				<p>Nota: Redondear los céntimos en todos los documentos que no coincidan con el sistema.</p>
-					<br />
-					<p>Ingresar los datos del documento, la fecha de emisión es la que dice el documento, y la fecha de ingreso es la fecha de recepción de la mercadería, “GRABAR”, seguir el proceso hasta el último documento. Comparar que los datos, Sub-total, IGV, Percepción, y Total que figuran en el documento físico sean iguales al registro en el sistema luego de verificar todos los documentos generados y si los datos están correctos,  “PROCESAR”.</p>
-					<br />
-					<p>Los egresos de caja ingresar al módulo de Almacén, “GRABAR”, revisar, “PROCESAR”, y cancelar con el botón “PAGO RAPIDO” (no olvidar de dar pago rápido, de lo contrario el sistema lo considera como documento por pagar).</p>
-					<br />
-					<h3>Consideraciones</h3>
-					<br />
-					<ul>
-						<li>
-							<p>RECIBO POR HONORARIO, RECIBOS INTERNOS, BOLETAS DE VENTA, GUIAS INTERNAS (PRESTAMOS / DEVOLUCION)  no llevan IGV, por ello quitar el check de IGV.</p>
-						</li>
-						<li>
-							<p>RECIBO INTERNO se utiliza para productos y servicios que no hay documento sustentatorio (caso excepcional), como movilidad, salida para pago de planilla. El RUC es 00000000, el proveedor es GASTO DE TIENDA.</p>
-						</li>
-						<li>
-							<p>REFRIGERIO. En el registro de las compras para almuerzo si los artículos comprados tienen IGV, registrarlo como REFRIGERIO AFECTO A IGV, y los artículos que no son afectos a IGV (verduras, champiñones crudos, etc.), como REFRIGERIO INAFECTO A IGV.</p>
-						</li>
-				</td>
-			</tr>
-		</tfoot>
 	</table>
 </div>

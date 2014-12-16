@@ -68,8 +68,6 @@
 						<li><a href="index.php?modulo=lista">Lista Precios</a></li>
 						<li><a href="index.php?modulo=articulos">Artículos</a></li>
 						<li><a href="index.php?modulo=checklist">Checklist</a></li>
-						<li><a href="">Instructivos</a></li>
-						<li><a href="">Procedimientos</a></li>
 						<li><a href="index.php?modulo=calculadora">Calculadora</a></li>
 					<?php } ?>
 				</ul>

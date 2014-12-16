@@ -199,3 +199,8 @@ ul{
 .resaltar {
 	font-weight: bold;
 }
+
+.resaltar-rojo {
+	font-weight: bold;
+	color: red;
+}
