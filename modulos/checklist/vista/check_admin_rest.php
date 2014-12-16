@@ -23,6 +23,8 @@
 				<td>
 					<p><span class="resaltar">INGRESAR DOCUMENTOS</span>, facturas, guías de remisión, recibos de servicios, guias internas (ingreso por préstamo o devolucón de mercadería) en el módulo de "Almacén". Verificar que la fecha de emisión registrada en el sistema corresponda a la fecha de emisión del documento.<span class="resaltar">Grabar</span>, luego de ingresar todos los documentos revisar uno por uno y <span class="resaltar">Procesar.</span></p> 
 					<br />
+					<p>Nota: Redondear los centimos en el sistema para que cuadre con el documento.</p>
+					<br />
 					<table>
 						<tr>
 							<td>PAPA PRECOCIDA, POLLO, CHAMPIÑONES CRUDOS, VERDURAS</td>
@@ -53,10 +55,12 @@
 						<a href="#modal3">CÁLIDDA,</a>
 					</p>
 					<br />
+					<h2>CONSIDERACIONES: <a href="#modal20">(click aqui para ver)</a></h2>
+					<br />
 					<h2>EXCEPCIONES:</h2>
 					<br />
 					<p>Las facturas de ZETAGAS deben ingresarse con PERCEPCIÓN.</p>
-					<p>Las facturas de SAN FERNANDO que viene con CHULETA hay una diferencia en la PERCEPCIÓN del sistema contra el documento, PROCESARLO.</p>
+					<p>Las facturas de SAN FERNANDO que viene con CHULETA, siempre va haber una diferencia en la PERCEPCIÓN del sistema contra el documento, PROCESARLO.</p>
 					<p></p>
 					<div id="modal1" class="modalmask">
 						<div class="modalbox resize">
@@ -76,6 +80,16 @@
 						<div class="modalbox resize">
 							<a href="#close" title="Close" class="close">X</a>
 							<img src="modulos/checklist/img/calidda.jpg" />
+						</div>
+					</div>
+					<div id="modal20" class="modalmask">
+						<div class="modalbox resize">
+							<a href="#close" title="Close" class="close">X</a>
+							<ul>
+								<li>RECIBO POR HONORARIO, RECIBOS INTERNOS, BOLETAS DE VENTA, GUIAS INTERNAS (PRESTAMOS / DEVOLUCIÓN) no llevan IGV, por ello quitar el check de IGV.</li>
+								<li>RECIBO INTERNO se utliza para los productos y servicios que no hay documento sustentatorio (caso excepcional), como movilidad, salida para pago de planilla. El RUC es 00000000, el proveedor es GASTO DE TIENDA.</li>
+								<li>REFRIGERIO. En el registro de las compras para almuerzo, si los artículos comprados tienen IGV, registralo com REFRIGERIO AFECTO A IGV, y los artículos que no son afectos a IGV (verduras, champiñones crudos, etc.) como REFRIGERIO INAFECTO A IGV.</li>
+							</ul>
 						</div>
 					</div>
 				</td>

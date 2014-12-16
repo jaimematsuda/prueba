@@ -103,6 +103,15 @@
 	height: 600px;
 }
 
+#modal20:target .resize {
+	width: 600px;
+	height: 300px;
+}
+
+#modal20:target li {
+	padding: 10px;
+}
+
 .close {
 	background: #606061;
 	color; #FFFFFF;
@@ -134,3 +143,4 @@
 #body table table td {
 	padding: 2px 8px;
 }
+
