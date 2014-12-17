@@ -47,7 +47,7 @@
 						</tr>
 					</table>
 					<br />
-					<h2>NO LLEVAN IGV (quitar check de IGV):</h2>
+					<h2>LOS SIGUIENTES DOCUMENTOS NO LLEVAN IGV (quitar el check de IGV en los articulos):</h2>
 					<br />
 					<ul>
 						<li>GUIAS INTERNAS (PRESTAMOS / DEVOLUCIONES).</li>
@@ -56,7 +56,7 @@
 					<h2>EXCEPCIONES:</h2>
 					<br />
 					<ul>
-						<li>Las facturas de ZETAGAS deben ingresarse con PERCEPCIÓN.</li>
+						<li>Las facturas de ZETAGAS y LIMA GAS deben ingresarse con PERCEPCIÓN.</li>
 						<li>Las facturas de SAN FERNANDO que viene con CHULETA, siempre va haber una diferencia en la PERCEPCIÓN del sistema contra el documento, PROCESARLO.</li>
 					</ul>
 					<br />
@@ -154,11 +154,11 @@
 					<br />
 					<p><span class="resaltar">Grabar, Procesar </span><span class="resaltar-rojo">y PAGO RÁPIDO</p>
 					<br />
-					<h2>NO LLEVAN IGV (quitar check de IGV):</h2>
+					<h2>LOS SIGUIENTES DOCUMENTOS NO LLEVAN IGV (quitar el check de IGV en los articulos):</h2>
 					<br />
 					<ul>
 						<li>RECIBO POR HONORARIO.</li>
-						<li>REBIBOS INTERNOS.</li>
+						<li>RECIBOS INTERNOS.</li>
 						<li>BOLETAS DE VENTA.</li>
 					</ul>
 					<br />
@@ -230,7 +230,7 @@
 			<tr>
 				<td>8</td>
 				<td><input type="checkbox"></td>
-				<td><p>Registrar <span class="resaltar">ÓRDENES DE PRODUCCIÓN </span>en el área de <span class="resaltar">Parrilla</span> de:</p>
+				<td><p>Registrar <span class="resaltar">ÓRDENES DE PRODUCCIÓN </span>del área de <span class="resaltar">Parrilla</span> de:</p>
 				<br />
 					<ul>
 						<li>Aderezo base</li>
@@ -253,7 +253,7 @@
 				<td>9</td>
 				<td><input type="checkbox"></td>
 				<td>
-					<p>Registrar el <span class="resaltar">PORCIONAMIENTO </span> en el área de <span class="resaltar">Parrilla </span>de:</p>
+					<p>Registrar el <span class="resaltar">PORCIONAMIENTO </span> del área de <span class="resaltar">Parrilla </span>de:</p>
 					<br />
 					<ul>
 						<li>Molleja Kilos-----> Molleja Unidad.</li>
@@ -280,7 +280,7 @@
 				<td>10</td>
 				<td><input type="checkbox"></td>
 				<td>
-					<p>Verificar en el <span class="resaltar">KARDEX </span>en el área de <span class="resaltar">Cocina, </span>si el total de <span class="resaltar">"Pollo"</span> coincide con los documentos ingresados más el saldo anterior, si coincide pasar al siguiente paso, si no, verificar:  </p>
+					<p>Verificar en el <span class="resaltar">KARDEX </span>del área de <span class="resaltar">Cocina, </span>si el total de <span class="resaltar">"Pollo"</span> coincide con los documentos ingresados más el saldo anterior, si coincide pasar al siguiente paso, si no, verificar:  </p>
 					<br />
 					<ul>
 						<li>Si estan correctos las cantidades de los documentos ingresados.</li>
@@ -322,7 +322,7 @@
 				<td>
 					<p>Registrar las <span class="resaltar">ÓRDENES DE PRODUCCIÓN.</span></p> 
 					<br />
-					<p>En el área de <span class="resaltar">Cocina, </span>de:</p>
+					<p>Del área de <span class="resaltar">Cocina, </span>de:</p>
 					<br />
 					<ul>
 						<li>Yuquitas con queso.</span></li>
@@ -333,7 +333,7 @@
 						<li>Salsas de cocina (salsa madre, bolognesa, pesto, huancaína, salsa jugo maracuyá, etc).</span></li>
 					</ul>
 					<br />
-					<p>En el área de <span class="resaltar">Bar, </span>de:</p>
+					<p>Del área de <span class="resaltar">Bar, </span>de:</p>
 					<br />
 					<ul>
 						<li>Chicha Natural (solo para tiendas que preparan con maiz morado).</span></li>
@@ -384,13 +384,13 @@
 						<li>Si se uso "Pollo Crudo", Pollo broaster pieza, arroz corriente, papa y demás insumos para preparar el Almuerzo.</li>
 						<br />
 						<ul>
-							<li>Realizar la, <span class="resaltar">SALIDA </span>en el área de <span class="resaltar">Cocina </span>de los productos, imprimirlo y lo firma el Administrador y el responsable de Cocina.</li>
+							<li>Realizar <span class="resaltar">SALIDA </span>del área de <span class="resaltar">Cocina </span>de los productos, imprimirlo y lo firma el Administrador y el responsable de Cocina.</li>
 						</ul>
 						<br />
 						<li>Si se uso "Pollo Cocido" para preparar el Almuerzo</li>
 						<br />
 						<ul>
-							<li>Realizar la, <span class="resaltar">SALIDA </span>en el área de <span class="resaltar">Horno, </span>imprimirlo y lo firma el Adiministrador y el responsable de Horno.</li>
+							<li>Realizar <span class="resaltar">SALIDA </span>del área de <span class="resaltar">Horno, </span>imprimirlo y lo firma el Adiministrador y el responsable de Horno.</li>
 						</ul>
 					</ul>
 				</td>
@@ -407,7 +407,7 @@
 			<tr>
 				<td>15</td>
 				<td><input type="checkbox"></td>
-				<td><p>Registrar el <span class="resaltar">PORCIONAMIENTO </span>en <span class="resaltar">Cocina </span>de:</p>
+				<td><p>Registrar el <span class="resaltar">PORCIONAMIENTO </span>de <span class="resaltar">Cocina:</span></p>
 					<br />
 					<ul>
 						<li>Lomo x Kg. -----------> Lomo 220 gr., Cuadril de Lomo, Punta de Lomo Fino Porción.</span></li>
@@ -436,7 +436,7 @@
 				<td>17</td>
 				<td><input type="checkbox"></td>
 				<td>
-					<p>Semanalmente registrar los <span class="resaltar">GASTOS DE PLANILLA, </span>(sueldos), gratificaciones (según cronograma), movilidad semanal, fin de mes, etc.</p>
+					<p>Semanalmente registrar los <span class="resaltar">GASTOS DE PLANILLA, </span>sueldos, gratificaciones (según cronograma), movilidad semanal, fin de mes, etc.</p>
 				</td>
 				<td></td>
 			</tr>
@@ -444,7 +444,7 @@
 				<td>18</td>
 				<td><input type="checkbox"></td>
 				<td>
-					<p>Verificar que el personal de las áreas haya realizado el registro de <span class="resaltar">REQUERIMIENTO, </span>de roductos para el día siguiente</p>
+					<p>Verificar que el personal de las áreas haya realizado el registro de <span class="resaltar">REQUERIMIENTO, </span>de productos para el día siguiente</p>
 				</td>
 				<td></td>
 			</tr>
@@ -452,7 +452,7 @@
 				<td>19</td>
 				<td><input type="checkbox"></td>
 				<td>
-					<p>Realizar la <span class="resaltar">TRANSFERENCIA, </span>de <span class="resaltar">Cocina a Horno, </span>del consumo de<span class="resaltar">Pollo y la Papa.</p>
+					<p>Realizar la <span class="resaltar">TRANSFERENCIA, </span>de <span class="resaltar">Cocina a Horno, </span>del consumo de <span class="resaltar">Pollo y la Papa.</p>
 					<br />
 					<p>Restar: el Stock Actual (sistema) menos el Stock Final Fisico (finales).</p>
 				</td>

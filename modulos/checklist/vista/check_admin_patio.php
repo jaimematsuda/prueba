@@ -47,7 +47,7 @@
 						</tr>
 					</table>
 					<br />
-                    <h2>NO LLEVAN IGV (quitar check de IGV):</h2>
+                    <h2>LOS SIGUIENTES DOCUMENTOS NO LLEVAN IGV (quitar el check de IGV en los articulos):</h2>
                     <br />
                     <ul>
                         <li>GUIAS INTERNAS (PRESTAMOS / DEVOLUCIONES).</li>
@@ -56,7 +56,7 @@
 					<h2>EXCEPCIONES:</h2>
 					<br />
                     <ul>
-                        <li>Las facturas de ZETAGAS deben ingresarse con PERCEPCIÓN.</li>
+                        <li>Las facturas de ZETAGAS y LIMA GAS deben ingresarse con PERCEPCIÓN.</li>
                         <li>Las facturas de SAN FERNANDO que viene con CHULETA, siempre va haber una diferencia en la PERCEPCIÓN del sistema contra el documento, PROCESARLO.</li>
                     </ul>
 					<br />
@@ -154,11 +154,11 @@
 					<br />
                     <p><span class="resaltar">Grabar, Procesar </span><span class="resaltar-rojo">y PAGO RÁPIDO</p>
                     <br />
-                    <h2>NO LLEVAN IGV (quitar check de IGV):</h2>
+                    <h2>LOS SIGUIENTES DOCUMENTOS NO LLEVAN IGV (quitar el check de IGV en los articulos):</h2>
                     <br />
                     <ul>
                         <li>RECIBO POR HONORARIO.</li>
-                        <li>REBIBOS INTERNOS.</li>
+                        <li>RECIBOS INTERNOS.</li>
                         <li>BOLETA DE VENTA.</li>
                     </ul>
                     <br />
@@ -206,7 +206,7 @@
 			<tr>
 				<td>7</td>
 				<td><input type="checkbox"></td>
-				<td><p>Registrar <span class="resaltar">ÓRDENES DE PRODUCCIÓN </span>en el área de <span class="resaltar">??????</span> de:</p>
+				<td><p>Registrar <span class="resaltar">ÓRDENES DE PRODUCCIÓN </span>del área de <span class="resaltar">Producción</span> de:</p>
 					<br />
 					<ul>
 						<li>Pollo Broaster (cuando se pique pollo)</li>
@@ -235,7 +235,7 @@
 				<td>8</td>
 				<td><input type="checkbox"></td>
 				<td>
-					<p>Registrar el <span class="resaltar">PORCIONAMIENTO </span> en el área de <span class="resaltar">?????? </span>de:</p>
+					<p>Registrar el <span class="resaltar">PORCIONAMIENTO </span>del área de <span class="resaltar">Producción </span>de:</p>
 					<br />
 					<ul>
 						<li>Alitas x Kg.------------> Alitas Unidad.</li>
@@ -269,7 +269,7 @@
 						<li>Si se uso Pollo, Pollo broaster pieza (crudo o cocido), arroz corriente, papa no precocida y demás insumos para preparar el Almuerzo.</li>
 						<br />
 						<ul>
-							<li>Realizar la, <span class="resaltar">SALIDA </span>en el área de <span class="resaltar">Producción </span>de los productos, imprimirlo y lo firma el Administrador y el responsable de Producción.</li>
+							<li>Realizar la, <span class="resaltar">SALIDA </span>del área de <span class="resaltar">Producción </span>de los productos, imprimirlo y lo firma el Administrador y el responsable de Producción.</li>
 						</ul>
 					</ul>
 				</td>
@@ -296,7 +296,7 @@
 				<td>11</td>
 				<td><input type="checkbox"></td>
 				<td>
-					<p>Semanalmente registrar los <span class="resaltar">GASTOS DE PLANILLA, </span>(sueldos), gratificaciones (según cronograma), movilidad semanal, fin de mes, etc.</p>
+					<p>Semanalmente registrar los <span class="resaltar">GASTOS DE PLANILLA, </span>sueldos, gratificaciones (según cronograma), movilidad semanal, fin de mes, etc.</p>
 				</td>
 				<td>
 				</td>
@@ -305,7 +305,7 @@
 				<td>12</td>
 				<td><input type="checkbox"></td>
 				<td>
-					<p>Verificar que el personal de las áreas haya realizado el registro de <span class="resaltar">REQUERIMIENTO, </span>de roductos para el día siguiente</p>
+					<p>Verificar que el personal de las áreas haya realizado el registro de <span class="resaltar">REQUERIMIENTO, </span>de productos para el día siguiente</p>
 				</td>
 				<td>
 				</td>
