@@ -18,7 +18,7 @@
 			$css_vista[] = $dir_css."/basic.css";
 			$js_vista = array();
 			$js_vista[] = $dir_js."/edicion.js";
-			$js_vista[] = "js/jquery.simplemodal.js";
+			$js_vista[] = "lib/jquery/ventana_modal/jquery.simplemodal.js";
 			$js_vista[] = $dir_js."/basic.js";
 			require_once "modelo/producto_precio.php";
 			$producto_precios_chico = producto_precios_chico($db);

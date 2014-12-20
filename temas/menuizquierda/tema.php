@@ -4,9 +4,9 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title><?php echo $site_name;?></title>
 		<link href="temas/menuizquierda/css/menuizquierda.css" rel="stylesheet" type="text/css" />
-		<link href="js/jquery-ui/themes/lightness/1.11.1/jquery-ui.css" rel="stylesheet" type="text/css" />
-		<script type="text/javascript" src="js/jquery-min/1.7.2/jquery.min.js"></script>
-		<script type="text/javascript" src="js/jquery-ui/1.10.2/jquery-ui.min.js"></script>
+		<link href="lib/jquery/jquery-ui/themes/lightness/1.11.1/jquery-ui.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="lib/jquery/jquery-min/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/jquery/jquery-ui/1.10.2/jquery-ui.min.js"></script>
 
 		<!-- Inclusion dinamica de los css de las vistas -->
 		<?php if(isset($css_vista)){ ?>

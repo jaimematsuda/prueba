@@ -1,5 +1,5 @@
 <?php
-	require "/var/www/html/guiaprecios/lib/funciones.php";
+	require "/var/www/html/guiaprecios/lib/php/funciones.php";
 	if(!empty($_POST)) {
 	dump($_POST,true);
 	}

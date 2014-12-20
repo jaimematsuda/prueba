@@ -13,7 +13,7 @@
 	}
 	$name = "Sachi Kina";
 	$mail2 = "skina@gruponorkys.com";
-	require_once('lib/class.phpmailer.php');
+	require_once('lib/php/class.phpmailer.php');
 	$mail = new PHPMailer(true);
 	$mail -> IsSMTP();
 	

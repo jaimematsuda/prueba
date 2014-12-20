@@ -26,21 +26,21 @@
 	$css_vista[] = $dir_css."/agregar_articulo.css";
 
 	$js_vista = array();
-	$js_vista[] = "js/jquery_plugin/jquery.mockjax.js";
-	$js_vista[] = "js/jquery_plugin/jquery.validate.min.js";
+	$js_vista[] = "lib/jquery/jquery_plugin/jquery.mockjax.js";
+	$js_vista[] = "lib/jquery/jquery_plugin/jquery.validate.min.js";
 
 	$jq_vista = "$(document).ready(function(){
 					$(\"#proveedor\").autocomplete({
-						source: \"js/json/buscarproveedor.php\",
+						source: \"lib/php/json/buscarproveedor.php\",
 						minLengh: 2,
 					});
 					$(\"#articulo_sistema\").autocomplete({
-						source: \"js/json/buscararticulosistema.php\",
+						source: \"lib/php/json/buscararticulosistema.php\",
 						minLengh: 2,
 					});
 					$(\"#articulo_sistema\").focusout(function(){
 						$.ajax({
-							url: \"js/json/buscarunidad.php\",
+							url: \"lib/php/json/buscarunidad.php\",
 							type: 'POST',
 							dataType: 'json',
 							data: {articulosistema: $(\"#articulo_sistema\").val()},

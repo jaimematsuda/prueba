@@ -27,7 +27,7 @@
 		next($array);
 	}
 	$columna .= "</table> \r";
-	require_once('lib/class.phpmailer.php');
+	require_once('lib/php/class.phpmailer.php');
 	$mail = new PHPMailer(true);
 	$mail -> IsSMTP();
 	

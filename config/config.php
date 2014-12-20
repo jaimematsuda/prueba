@@ -23,7 +23,7 @@ $dbname = "guiaprecios";
 	//*** Creando la conexión y guardandolo en la variable $db ***
 $db = mysql_connect($dbhost,$dbuser,$dpass) or die ("Error en la conexion");
 mysql_select_db($dbname,$db); // Abre la base de datos
-require_once "lib/funciones.php";
-require_once "lib/autenticacion.php";
+require_once "lib/php/funciones.php";
+require_once "lib/php/autenticacion.php";
 
 ?>
