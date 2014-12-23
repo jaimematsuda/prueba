@@ -49,6 +49,16 @@ function lista_articulos($db)
 	return $data;
 }
 
+function lista_tipo_egreso($db)
+{
+	$query = "SELECT tipo_egreso, descripcion FROM ".
+	"tipologias_egresos AS e ".
+	"INNER JOIN tipologias_descripciones AS d ON e.id_tipo_egreso = d.id_tipo_egreso ".
+	"ORDER BY tipo_egreso";
+	$data = rs_table($query,$db);
+//	dump($data, true);
+	return $data;
+}
 //*** Devuelve el tipo de cambio ***
 
 function tcambio_sunat()

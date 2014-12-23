@@ -36,6 +36,27 @@ switch($pagina){
 		}
 		$controlador = $pagina.".php";
 		break;
+	case "lista_tipo_egreso":
+		$controlador = $pagina.".php";
+		break;
+	case "agregar_tipo_egreso":
+		if((!is_editor()) && (!is_admin())) {
+			die ("Esta zona esta restringida a los editores y administaradores del sistema");
+		}
+		$controlador = $pagina.".php";
+		break;
+	case "editar_tipo_egreso":
+		if((!is_editor()) && (!is_admin())) {
+			die ("Esta zona esta restringida a los editores y administaradores del sistema");
+		}
+		$controlador = $pagina.".php";
+		break;
+	case "eliminar_tipo_egreso":
+		if((!is_editor()) && (!is_admin())) {
+			die ("Esta zona esta restringida a los editores y administaradores del sistema");
+		}
+		$controlador = $pagina.".php";
+		break;
 	default:
 		$controlador = "index.php";
 		$pagina = "index";
