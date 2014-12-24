@@ -36,6 +36,35 @@ function agregar_articulo($proveedor, $articulo_sistema, $unidad, $articulo_docu
 }
 
 
+function agregar_tipologia($tipo_egreso, $descripcion, $db)
+{
+	mysql_query ("BEGIN");	
+
+	$query = "SELECT id_tipo_egreso FROM tipologias_egresos WHERE tipo_egreso='".
+		utf8_decode($tipo_egreso)."'";
+	$fid = mysql_query($query, $db) or die (mysql_query()."<br /> ".$query);
+	$id = mysql_fetch_assoc($fid);
+	if($id){
+		$id_tipo_egreso = $id['id_tipo_egreso'];
+		$query = "INSERT INTO tipologias_descripciones(id_tipo_egreso, descripcion) ".
+			"VALUES(".$id_tipo_egreso.", '".$descripcion."')";
+		$rs = mysql_query($query, $db) or die ("error al ingresar TIPOLOGÍA DE EGRESOS1");
+	}else{
+		$query = "INSERT INTO tipologias_egresos(tipo_egreso) VALUES(UPPER('".
+			$tipo_egreso."'))";
+		$rs = mysql_query($query, $db) or die ("error al ingresar TIPOLOGÍA DE EGRESOS2");
+		$id_tipo_egreso = mysql_insert_id();
+		$query = "INSERT INTO tipologias_descripciones(id_tipo_egreso, descripcion) ".
+			"VALUES(".$id_tipo_egreso.", '".$descripcion."')";
+		$rs = mysql_query($query, $db) or die ("error al ingresar TIPOLOGÍA DE EGRESOS3");
+	}
+		
+	mysql_query("COMMIT");
+
+	return true;
+}
+
+
 function producto_precios($db)
 {
 	$query = "SELECT d.id_pvd, d.fecha, d.vigencia_inicio, d.vigencia_final, a.proveedor, b.producto, d.unidad, d.valor_venta ".

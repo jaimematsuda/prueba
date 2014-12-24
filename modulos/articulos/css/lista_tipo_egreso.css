@@ -1,0 +1,45 @@
+#body h2 {
+	font-size: 15px;
+	font-weight: bold;
+	color: #3B3B3B;
+}
+
+#body a {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+#body a:hover {
+	color: #B53332;
+}
+
+#body table {
+	padding-bottom: 10px;
+}
+
+.fila {
+	color: #3B3B3B;
+}
+
+.fila:nth-child(odd) {
+	background-color: #f6f6f6;
+}
+
+.fila:nth-child(even) {
+	background-color: #dddddd;
+}
+
+#body tr:hover {
+	color: #000;
+	background: #f99;
+	cursor: pointer;
+}
+
+#body th {
+	color: #fff;
+	background-color: #000;
+}
+
+#body td {
+	padding: 2px 6px;
+}

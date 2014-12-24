@@ -15,7 +15,7 @@
 						var buscar = $(\"#buscar_articulo\").val();
 						$(\"#tabla tr\").show();
 						if(buscar.length>0){
-							$(\"#tabla tr td#en_documento\").not(\":Contains('\"+buscar+\"')\").parent().hide();
+							$(\"#tabla tr td#descripcion\").not(\":Contains('\"+buscar+\"')\").parent().hide();
 						}
 					});
 				});
