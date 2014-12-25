@@ -6,7 +6,9 @@
 		<label>Tipología de Egreso :</label>
 		<input type="text" id="tipo_egreso" name="tipo_egreso" value="" autofocus required/><br />
 		<label>Descripción:</label>
-		<input type="text" id="descripcion" name="descripcion" value="" required/><br />
+		<textarea id="descripcion" name="descripcion" rows="5" cols="40" required>
+		</textarea>
+		<br />
 		<br />&nbsp;
 		<input type="submit" name="enviar" value="Grabar" />
 		&nbsp; &nbsp;
