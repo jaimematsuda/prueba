@@ -47,15 +47,15 @@ function agregar_tipologia($tipo_egreso, $descripcion, $db)
 	if($id){
 		$id_tipo_egreso = $id['id_tipo_egreso'];
 		$query = "INSERT INTO tipologias_descripciones(id_tipo_egreso, descripcion) ".
-			"VALUES(".$id_tipo_egreso.", '".$descripcion."')";
+			"VALUES(".$id_tipo_egreso.", '".utf8_decode($descripcion)."')";
 		$rs = mysql_query($query, $db) or die ("error al ingresar TIPOLOGÍA DE EGRESOS1");
 	}else{
 		$query = "INSERT INTO tipologias_egresos(tipo_egreso) VALUES(UPPER('".
-			$tipo_egreso."'))";
+			utf8_decode($tipo_egreso)."'))";
 		$rs = mysql_query($query, $db) or die ("error al ingresar TIPOLOGÍA DE EGRESOS2");
 		$id_tipo_egreso = mysql_insert_id();
 		$query = "INSERT INTO tipologias_descripciones(id_tipo_egreso, descripcion) ".
-			"VALUES(".$id_tipo_egreso.", '".$descripcion."')";
+			"VALUES(".$id_tipo_egreso.", '".utf8_decode($descripcion)."')";
 		$rs = mysql_query($query, $db) or die ("error al ingresar TIPOLOGÍA DE EGRESOS3");
 	}
 		
