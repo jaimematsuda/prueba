@@ -70,6 +70,9 @@
 						<li><a href="index.php?modulo=checklist">Checklist</a></li>
 						<li><a href="index.php?modulo=calculadora">Calculadora</a></li>
 					<?php } ?>
+						<?php if(is_session() && (!is_admin() && !is_editor())) { ?>
+							<li><a href="index.php?modulo=articulos&pagina=lista_tipo_egreso">Lista Tipología de Egresos</a></li>
+						<?php } ?>
 				</ul>
 			</div>
 			<div id="body">
