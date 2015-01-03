@@ -57,22 +57,31 @@
 						<li><a href="index.php?modulo=admin&pagina=usuarios">Usuarios</a></li>
 						<li><a href="index.php?modulo=contacto&pagina=contactos">Contactos</a></li>
 						<li><a href="index.php?modulo=admin&pagina=admin_config">Configuraci&oacute;n</a></li>
+						<li><a href="index.php?modulo=lista">Lista Precios</a></li>
+						<li><a href="index.php?modulo=articulos">Artículos</a></li>
+						<li><a href="index.php?modulo=platos">Platos de Venta</a></li>
+						<li><a href="index.php?modulo=checklist">Checklist</a></li>
+						<li><a href="index.php?modulo=calculadora">Calculadora</a></li>
 					<?php } ?>
 					<?php if(is_session() && is_editor()) { ?>
 						<li><a href="index.php?modulo=edicion">Camb Precio</a></li>
 						<li><a href="index.php?modulo=email&pagina=index">Enviar Email</a></li>
 						<li><a href="index.php?modulo=edicion&pagina=agregar_nuevo">Nuevo</a></li>
 						<li><a href="index.php?modulo=edicion&pagina=lista_edit">Editar</a></li>
-					<?php } ?>
-					<?php if(is_session()) { ?>
 						<li><a href="index.php?modulo=lista">Lista Precios</a></li>
 						<li><a href="index.php?modulo=articulos">Artículos</a></li>
+						<li><a href="index.php?modulo=platos">Platos de Venta</a></li>
 						<li><a href="index.php?modulo=checklist">Checklist</a></li>
 						<li><a href="index.php?modulo=calculadora">Calculadora</a></li>
 					<?php } ?>
-						<?php if(is_session() && (!is_admin() && !is_editor())) { ?>
-							<li><a href="index.php?modulo=articulos&pagina=lista_tipo_egreso">Lista Tipología de Egresos</a></li>
-						<?php } ?>
+					<?php if(is_session() && (!is_admin() && !is_editor())) { ?>
+						<li><a href="index.php?modulo=lista">Lista Precios</a></li>
+						<li><a href="index.php?modulo=articulos">Artículos</a></li>
+						<li><a href="index.php?modulo=checklist">Checklist</a></li>
+						<li><a href="index.php?modulo=articulos&pagina=lista_tipo_egreso">Tipología de Egresos</a></li>
+						<li><a href="index.php?modulo=platos&pagina=lista_uso_descartables">Uso de Descartables</a></li>
+						<li><a href="index.php?modulo=calculadora">Calculadora</a></li>
+					<?php } ?>
 				</ul>
 			</div>
 			<div id="body">

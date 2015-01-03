@@ -416,6 +416,41 @@ function data_to_table_mail_verd($data)
 	echo "</table>\n";
 }
 
+
+	//*** Agrega los datos de una consulta a una tabla de uso de descartable *** 
+function data_to_table_descartable($data, $tienda_tipo, $headers=array())
+{
+	if(!empty($data)){
+		echo "<table id='tabla' class='tabla'>\n";
+		/* Imprimiendo Cabeceras */
+		echo "<tr class='fila_cabecera'>\n";
+		if(!empty($headers)){
+			foreach($headers as $header){
+				echo "<th class='celda_cabecera'>".$header."</th>\n";
+			} 
+		}else{
+			foreach($data[0] as $header=>$dato){
+				echo "<th class='celda_cabecera'>".utf8_decode($header)."</th>\n";
+			} 
+		}
+		echo "</tr>\n";
+
+		/* Imprimiendo Datos */
+		foreach($data as $fila){
+			echo "<tr class='fila'>\n";
+			if ($fila['tienda_tipo'] == $tienda_tipo) {
+				foreach($fila as $id=>$dato){
+					echo "<td class='celda' id='".$id."'>".utf8_encode($dato)."</td>\n";
+				}
+			} 
+			echo "</tr>\n";
+		}
+		echo "</table>\n";
+	}
+}
+
+
+
 	//*** Convierte el formato de fecha de MYSQL al formato pe y viceversa ***
 function cform_fecha($form_fecha)
 {

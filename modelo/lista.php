@@ -59,8 +59,25 @@ function lista_tipo_egreso($db)
 //	dump($data, true);
 	return $data;
 }
-//*** Devuelve el tipo de cambio ***
 
+
+function lista_uso_descartables($db)
+{
+	$query = "SELECT tt.tienda_tipo, pl.area, pl.plato, ud.uso_para, ay.detallado ".
+	"FROM ".
+	"rel_platos_descartables AS pd ".
+	"INNER JOIN platos AS pl ON pl.id_plato = pd.id_plato ".
+	"INNER JOIN rel_tiendas_platos AS tp ON tp.id_plato = pl.id_plato ".
+	"INNER JOIN tiendas_tipos AS tt ON tt.id_tienda_tipo =tp.id_tienda_tipo ".
+	"INNER JOIN usos_descartables AS ud ON ud.id_uso_descartable = pd.id_uso_descartable ".
+	"INNER JOIN articulos_sistemas AS ay ON ay.id_articulo_sistema = ud.id_articulo_sistema ".
+	"ORDER BY pl.plato";
+	$data = rs_table($query,$db);
+//	dump($data, true);
+	return $data;
+}
+
+//*** Devuelve el tipo de cambio ***
 function tcambio_sunat()
 {
 	$fid = mysql_query("SELECT cambio_compra, cambio_venta FROM tcambio_sunat WHERE id_tcambio_sunat=1");
