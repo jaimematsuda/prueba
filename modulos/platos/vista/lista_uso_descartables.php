@@ -16,14 +16,23 @@
 				<input id="buscar_plato" type="text" />
 				<br />
 				<br />
-				<?php data_to_table_descartable($lista, 'NORKYS', array()); ?>
+				<table id="tabla" class="tabla">
+					<?php data_to_table_descartable($lista, 'NORKYS', 'HORNO', array()); ?>
+					<?php data_to_table_descartable($lista, 'NORKYS', 'PARRILLA', array()); ?>
+					<?php data_to_table_descartable($lista, 'NORKYS', 'COCINA', array()); ?>
+					<?php data_to_table_descartable($lista, 'NORKYS', 'BROASTER', array()); ?>
+				</table>
 			</div>			
 			<div class="content-2">
 				<p>Buscar Plato Solari:</p>
 				<input id="buscar_plato" type="text" />
 				<br />
 				<br />
-				<?php data_to_table_descartable($lista, "SOLARI", array()); ?>
+				<table id="tabla" class="tabla">
+					<?php data_to_table_descartable($lista, 'SOLARI', 'HORNO', array()); ?>
+					<?php data_to_table_descartable($lista, 'SOLARI', 'PARRILLA', array()); ?>
+					<?php data_to_table_descartable($lista, "SOLARI", 'COCINA', array()); ?>
+				</table>
 			</div>			
 		</div>
 	</section>
