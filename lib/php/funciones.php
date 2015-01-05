@@ -422,7 +422,7 @@ function data_to_table_descartable($dataplato, $datadesca, $tienda_tipo, $area, 
 {
 	if(!empty($dataplato)){
 		echo "<tr class='fila'>\n";
-			echo "<th>\n";
+			echo "<th colspan='5'>\n";
 				echo $area;
 			echo "</th>\n";
 		echo "<tr>\n";
