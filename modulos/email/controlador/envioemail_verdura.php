@@ -38,10 +38,10 @@
 	$mail -> SMTPAuth	= true;
 	$mail -> SMTPSecure	= "tls";
 	$mail -> Port		= 587;
-//	$mail -> Username	= "skina@macroscem.com";
-//	$mail -> Password	= "sk147963";
-	$mail -> Username	= "inforestnorkys@gmail.com";
-	$mail -> Password	= "spetre4a";
+	$mail -> Username	= "skina@macroscem.com";
+	$mail -> Password	= "sk147963";
+//	$mail -> Username	= "inforestnorkys@gmail.com";
+//	$mail -> Password	= "spetre4a";
 	$mail -> From		= "skina@macroscem.com";
 	$mail -> FromName	= "Sachi Kina";
 	$mail -> Subject = $subject;

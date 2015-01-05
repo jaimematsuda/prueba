@@ -18,16 +18,18 @@
 	require_once('lib/php/class.phpmailer.php');
 	$mail = new PHPMailer(true);
 	$mail -> IsSMTP();
-	$mail -> PluginDir = "lib/";
+
+	try {
+
 	$mail -> Host		= "smtp.gmail.com";
 	$mail -> SMTPDebug	= 2;
 	$mail -> SMTPAuth	= true;
 	$mail -> SMTPSecure	= "tls";
 	$mail -> Port		= 587;
-//	$mail -> Username	= "skina@macroscem.com";
-//	$mail -> Password	= "sk147963";
-	$mail -> Username	= "inforestnorkys@gmail.com";
-	$mail -> Password	= "spetre4a";
+	$mail -> Username	= "skina@macroscem.com";
+	$mail -> Password	= "sk147963";
+//	$mail -> Username	= "inforestnorkys@gmail.com";
+//	$mail -> Password	= "spetre4a";
 	$mail -> From		= "skina@macroscem.com";
 	$mail -> FromName	= "Sachi Kina";
 	$mail -> Subject = $subject;
@@ -42,31 +44,20 @@
 	foreach ($to as $fila) {
 		foreach ($fila as $destino) {
 			$mail -> AddAddress($destino);
+			$mail -> Send();
+			$mail -> ClearAddresses();
 		}
 	}
-	$exito = $mail -> Send();
-	// Si el mensaje no ha podido enviarse se realizaran 4 intentos mas
-	// cada intento se hara 5 seg. despues del anterior, para ello se usa la funcion sleep
-	$intentos = 1;
-	while  ((!$exito) && ($intentos < 5) && ($mail -> ErrorInfo != "SMTP Error: Data not accepted")) {
-		sleep(5);
-		//echo $mail -> ErrorInfo;
-		$exito = $mail -> Send();
-		$intentos = $intentos + 1;
+	$rs = explode(",", $ccopia);
+	foreach ($rs as $fila => $destino) {
+		$mail -> AddCC($destino);
+		$mail -> Send();
+		$mail -> ClearAddresses();
 	}
-	if (!$exito) {
-		echo "Correo no enviado";
-		echo "<br />".$mail -> ErrorInfo;
-	}else{
-		echo "Correo enviado Revisar su buzon";
+			echo "Mensaje Enviado<p></p>\n";
+			} catch (phpmailerExeption $e) {
+			echo $e->errorMessage();
+			} catch(Exception $e) {
+			echo $e->getMessage();
 	}
-	$mail -> ClearAddresses();
-	if (!empty($ccopia)) {
-		$rs = explode(",", $ccopia);
-		foreach($rs as $fila => $destino) {
-			$mail -> AddCC($destino);
-		}
-	}
-	$mail -> Send();
-	$mail -> ClearAddresses();
 ?>
