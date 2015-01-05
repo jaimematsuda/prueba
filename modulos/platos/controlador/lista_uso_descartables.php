@@ -23,7 +23,8 @@
 				//]]>";
 	
 	require_once "modelo/lista.php";
-	$lista = lista_uso_descartables($db);
+	$listaplato = lista_platos($db);
+	$listadesca = lista_descartables($db);
 
 	require_once "temas/$tema/tema.php"; 
 ?>

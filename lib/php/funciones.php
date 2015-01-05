@@ -418,9 +418,9 @@ function data_to_table_mail_verd($data)
 
 
 	//*** Agrega los datos de una consulta a una tabla de uso de descartable *** 
-function data_to_table_descartable($data, $tienda_tipo, $area, $headers=array())
+function data_to_table_descartable($dataplato, $datadesca, $tienda_tipo, $area, $headers=array())
 {
-	if(!empty($data)){
+	if(!empty($dataplato)){
 		echo "<tr class='fila'>\n";
 			echo "<th>\n";
 				echo $area;
@@ -433,20 +433,43 @@ function data_to_table_descartable($data, $tienda_tipo, $area, $headers=array())
 				echo "<th class='celda_cabecera'>".$header."</th>\n";
 			} 
 		}else{
-			foreach($data[0] as $header=>$dato){
+			foreach($datapalto[0] as $header=>$dato){
 				echo "<th class='celda_cabecera'>".utf8_decode($header)."</th>\n";
 			} 
 		}
 		echo "</tr>\n";
 
 		/* Imprimiendo Datos */
-		foreach($data as $fila){
+		foreach($dataplato as $filaplato){
 			echo "<tr class='fila'>\n";
-			if ($fila['tienda_tipo'] == $tienda_tipo && $fila['area'] == $area) {
-				foreach($fila as $id=>$dato){
-					echo "<td class='celda' id='".$id."'>".utf8_encode($dato)."</td>\n";
+			echo "<td class='celda' id='plato'>".utf8_encode($filaplato['plato'])."</td>\n";
+			$principal = "";
+			$papa = "";
+			$ensalada = "";
+			$postre = "";
+			foreach($datadesca as $filadesca) {
+				if ($filadesca['id_plato'] == $filaplato['id_plato']) {
+					$filaswitch = $filadesca['uso_para'];
+					switch  ($filaswitch) {
+						case "PRINCIPAL":
+							$principal = $filadesca['detallado'];
+							break;
+						case (preg_match('/PAPA*/', $filaswitch) ? true : false):
+							$papa = $filadesca['detallado'];
+							break;
+						case (preg_match('/ENSALADA*/', $filaswitch) ? true : false):
+							$ensalada = $filadesca['detallado'];
+							break;
+						case "POSTRE":
+							$postre = $filadesca['detallado'];
+							break;
+					}
 				}
-			} 
+			}
+			echo "<td class='celda' id='principal'>".utf8_encode($principal)."</td>\n";
+			echo "<td class='celda' id='papa'>".utf8_encode($papa)."</td>\n";
+			echo "<td class='celda' id='ensalada'>".utf8_encode($ensalada)."</td>\n";
+			echo "<td class='celda' id='postre'>".utf8_encode($postre)."</td>\n"; 
 			echo "</tr>\n";
 		}
 	}
