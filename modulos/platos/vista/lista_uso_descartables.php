@@ -17,10 +17,10 @@
 				<br />
 				<br />
 				<table id="tabla" class="tabla">
-					<?php data_to_table_descartable($listaplato, $listadesca, 'NORKYS', 'HORNO', array('PLATO', 'PRINCIPAL', 'PAPA', 'ENSALDADA', 'POSTRE')); ?>
-					<?php data_to_table_descartable($listaplato, $listadesca, 'NORKYS', 'PARRILLA', array('PLATO', 'PRINCIPAL', 'PAPA', 'ENSALDADA', 'POSTRE')); ?>
+					<?php data_to_table_descartable($listaplato, $listadesca, 'NORKYS', 'HORNO', array('PLATO', 'PRINCIPAL', 'PAPA', 'ENSALADA', 'POSTRE')); ?>
+					<?php data_to_table_descartable($listaplato, $listadesca, 'NORKYS', 'PARRILLA', array('PLATO', 'PRINCIPAL', 'PAPA', 'ENSALADA', 'POSTRE')); ?>
 					<?php data_to_table_descartable($listaplato, $listadesca, 'NORKYS', 'COCINA', array('PLATO', 'PRINCIPAL', 'PAPA', 'ENSALDADA', 'POSTRE')); ?>
-					<?php data_to_table_descartable($listaplato, $listadesca, 'NORKYS', 'BROASTER', array('PLATO', 'PRINCIPAL', 'PAPA', 'ENSALDADA', 'POSTRE')); ?>
+					<?php data_to_table_descartable($listaplato, $listadesca, 'NORKYS', 'BROASTER', array('PLATO', 'PRINCIPAL', 'PAPA', 'ENSALADA', 'POSTRE')); ?>
 				</table>
 			</div>			
 			<div class="content-2">
@@ -29,9 +29,9 @@
 				<br />
 				<br />
 				<table id="tabla" class="tabla">
-					<?php data_to_table_descartable($listaplato, $listadesca, 'SOLARI', 'HORNO', array('PLATO', 'PRINCIPAL', 'PAPA', 'ENSALDADA', 'POSTRE')); ?>
-					<?php data_to_table_descartable($listaplato, $listadesca, 'SOLARI', 'PARRILLA', array('PLATO', 'PRINCIPAL', 'PAPA', 'ENSALDADA', 'POSTRE')); ?>
-					<?php data_to_table_descartable($listaplato, $listadesca, 'SOLARI', 'COCINA', array('PLATO', 'PRINCIPAL', 'PAPA', 'ENSALDADA', 'POSTRE')); ?>
+					<?php data_to_table_descartable($listaplato, $listadesca, 'SOLARI', 'HORNO', array('PLATO', 'PRINCIPAL', 'PAPA', 'ENSALADA', 'POSTRE')); ?>
+					<?php data_to_table_descartable($listaplato, $listadesca, 'SOLARI', 'PARRILLA', array('PLATO', 'PRINCIPAL', 'PAPA', 'ENSALADA', 'POSTRE')); ?>
+					<?php data_to_table_descartable($listaplato, $listadesca, 'SOLARI', 'COCINA', array('PLATO', 'PRINCIPAL', 'PAPA', 'ENSALADA', 'POSTRE')); ?>
 				</table>
 			</div>			
 		</div>

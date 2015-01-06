@@ -12,11 +12,11 @@
 					$.expr[':'].Contains = function(x, y, z){
 						return jQuery(x).text().toLowerCase().indexOf(z[3].toLowerCase())>=0;
 					};
-					$(\"#buscar_articulo\").keyup(function(){
-						var buscar = $(\"#buscar_articulo\").val();
+					$(\"#buscar_plato\").keyup(function(){
+						var buscar = $(\"#buscar_plato\").val();
 						$(\"#tabla tr\").show();
 						if(buscar.length>0){
-							$(\"#tabla tr td#en_documento\").not(\":Contains('\"+buscar+\"')\").parent().hide();
+							$(\"#tabla tr td#plato\").not(\":Contains('\"+buscar+\"')\").parent().hide();
 						}
 					});
 				});

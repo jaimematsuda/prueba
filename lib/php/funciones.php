@@ -441,14 +441,16 @@ function data_to_table_descartable($dataplato, $datadesca, $tienda_tipo, $area, 
 
 		/* Imprimiendo Datos */
 		foreach($dataplato as $filaplato){
-			echo "<tr class='fila'>\n";
-			echo "<td class='celda' id='plato'>".utf8_encode($filaplato['plato'])."</td>\n";
+			if ($filaplato['tienda_tipo'] == $tienda_tipo && $filaplato['area'] == $area) {
+				echo "<tr class='fila'>\n";
+				echo "<td class='celda' id='plato'>".utf8_encode($filaplato['plato'])."</td>\n";
+			}
 			$principal = "";
 			$papa = "";
 			$ensalada = "";
 			$postre = "";
 			foreach($datadesca as $filadesca) {
-				if ($filadesca['id_plato'] == $filaplato['id_plato']) {
+				if ($filadesca['id_plato'] == $filaplato['id_plato'] && $filaplato['tienda_tipo'] == $tienda_tipo && $filaplato['area'] == $area) {
 					$filaswitch = $filadesca['uso_para'];
 					switch  ($filaswitch) {
 						case "PRINCIPAL":
@@ -463,14 +465,17 @@ function data_to_table_descartable($dataplato, $datadesca, $tienda_tipo, $area, 
 						case "POSTRE":
 							$postre = $filadesca['detallado'];
 							break;
+						
 					}
 				}
 			}
-			echo "<td class='celda' id='principal'>".utf8_encode($principal)."</td>\n";
-			echo "<td class='celda' id='papa'>".utf8_encode($papa)."</td>\n";
-			echo "<td class='celda' id='ensalada'>".utf8_encode($ensalada)."</td>\n";
-			echo "<td class='celda' id='postre'>".utf8_encode($postre)."</td>\n"; 
-			echo "</tr>\n";
+			if ($filaplato['tienda_tipo'] == $tienda_tipo && $filaplato['area'] == $area) {
+				echo "<td class='celda' id='principal'>".utf8_encode($principal)."</td>\n";
+				echo "<td class='celda' id='papa'>".utf8_encode($papa)."</td>\n";
+				echo "<td class='celda' id='ensalada'>".utf8_encode($ensalada)."</td>\n";
+				echo "<td class='celda' id='postre'>".utf8_encode($postre)."</td>\n"; 
+				echo "</tr>\n";
+			}
 		}
 	}
 }
