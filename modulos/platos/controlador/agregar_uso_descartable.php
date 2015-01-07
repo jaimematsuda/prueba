@@ -1,17 +1,24 @@
 <?php
 	$mensaje = "";
 
-	require "modelo/articulo.php";
+	require "modelo/plato.php";
 
 	if(!empty($_POST)){
 		// Escapando las comillas de las cadenas
-		$proveedor = addslashes(trim($_POST["proveedor"]));
-		$articulo_sistema = addslashes(trim($_POST["articulo_sistema"]));
-		$unidad = addslashes(trim($_POST["unidad"]));
-		$articulo_documento = addslashes(trim($_POST["articulo_documento"]));
-		$presentacion = addslashes(trim($_POST["presentacion"]));
-		if (agregar_articulo($proveedor, $articulo_sistema, $unidad, 
-			$articulo_documento, $presentacion, $db)){
+		$tienda_tipo = addslashes(trim($_POST["tienda_tipo"]));
+		$area = addslashes(trim($_POST["area"]));
+		$plato = addslashes(trim($_POST["plato"]));
+		$uso_para1 = addslashes(trim($_POST["uso_para1"]));
+		$descartable1 = addslashes(trim($_POST["descartable1"]));
+		$uso_para2 = addslashes(trim($_POST["uso_para2"]));
+		$descartable2 = addslashes(trim($_POST["descartable2"]));
+		$uso_para3 = addslashes(trim($_POST["uso_para3"]));
+		$descartable3 = addslashes(trim($_POST["descartable3"]));
+		$uso_para4 = addslashes(trim($_POST["uso_para4"]));
+		$descartable4 = addslashes(trim($_POST["descartable4"]));
+		if (agregar_uso_descartable($tienda_tipo, $area, $plato, 
+			array($uso_para1=>$descartable1, $uso_para2=>$descartable2, $uso_para3=> 
+			$descartable3, $uso_para4=>$descartable4), $db)){
 			echo "<script>alert('El registro se creo con exito')</script>";
 		}else{
 			mysql_query("ROLLBACK");
@@ -19,11 +26,11 @@
 	}
 
 	// Aca el controlador llama a la vista 
-	$vista = $dir_vista."/agregar_articulo.php";
+	$vista = $dir_vista."/".$pagina.".php";
 
 	// Estilos de la Pagina
 	$css_vista = array();	
-	$css_vista[] = $dir_css."/agregar_articulo.css";
+	$css_vista[] = $dir_css."/".$pagina.".css";
 
 	$js_vista = array();
 	$js_vista[] = "lib/jquery/jquery_plugin/jquery.mockjax.js";

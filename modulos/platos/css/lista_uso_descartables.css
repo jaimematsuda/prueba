@@ -14,6 +14,11 @@
 	color: #B53332;
 }
 
+#body p {
+	display: inline;
+	margin-left: 80px;
+}
+
 #body table {
 	padding-bottom: 10px;
 	font-size: 13px;
