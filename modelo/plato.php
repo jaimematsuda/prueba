@@ -52,8 +52,8 @@ function agregar_uso_descartable($tienda_tipo, $area, $plato,
 				$id_uso_descartable = $id['id_uso_descartable'];
 			}else{
 				$query = "INSERT INTO usos_descartables(uso_para, id_articulo_sistema) ".
-					"VALUES(UPPER(utf8.encode('".$uso_para."')), ".$id_articulo_sistema.")";
-				$rs = mysql_query($query, $db) or die ("error al ingresar datos de Platos");
+					"VALUES(UPPER('".utf8_encode($uso_para)."'), '".$id_articulo_sistema."')";
+				$rs = mysql_query($query, $db) or die ("error al ingresar datos de Usos Descartables");
 				$id_uso_descartable = mysql_insert_id();
 			}
 
