@@ -5,8 +5,10 @@
 	$css_vista = array();
 	$css_vista[] = $dir_css."/".$pagina.".css";
 
-	require_once "modelo/articulo.php";
-	$articulos_actualizados = actualizar_articulo_sist($db);
-
+	$salida = array();
+	exec("python /var/www/html/guiaprecios/lib/python/actualizar_registros/actualizar_articulos.py", $salida);
+	foreach ($salida as $rs) {
+		$salida1 = $rs;
+	}
 	require_once "temas/$tema/tema.php"; 
 ?>

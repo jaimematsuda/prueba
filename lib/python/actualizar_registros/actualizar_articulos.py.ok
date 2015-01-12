@@ -13,7 +13,7 @@ conxinfo = pymssql.connect(
 
 curalma = conxinfo.cursor()
 
-conxguia = MySQLdb.connect('localhost', 'prueba', 'prueba', 'guiaprecios')
+conxguia = MySQLdb.connect('localhost', 'guiaprecios', 'prat38', 'guiaprecios')
 
 curguia = conxguia.cursor()
 
@@ -33,11 +33,7 @@ query = "SELECT tCodigoProducto, tCodigoSubFamilia, tResumido, \
 curalma.execute(query)
 
 for row in curalma:
-    print row['tCodigoProducto']
-    print row['tCodigoSubFamilia']
-    print row['tResumido']
     print row['tDetallado']
-    print row['tUnidadEntrada']
 
     if row['tCodigoSubFamilia'] == None:
         idsubfamilia = "1203"

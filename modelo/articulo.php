@@ -64,49 +64,6 @@ function agregar_tipologia($tipo_egreso, $descripcion, $db)
 	return true;
 }
 
-function actualizar_articulo_sist()
-{
-	$query = "SELECT id_articulo_sistema FROM articulos_sistemas ORDER BY ".
-		"id_articulo_sistema DESC LIMIT 1";
-
-	$mensaje = "Error al ejecutar consulta de articulos_sistemas";
-	$rs = mysql_query($query) or die("$mensaje");
-	$row = mysql_fetch_array($rs);
-	$idproducto = $row['id_articulo_sistema'];
-
-	conectar_mssql($conn);
-	$query = "SELECT tCodigoProducto, tCodigoSubFamilia, tResumido, tDetallado, tUnidadEntrada FROM TPRODUCTO WHERE tCodigoProducto > '".
-		$idproducto."'";
-	$rs = mssql_query($query);
-	if ($rs == false) 
-	{
-		echo "Error al ejecutar consuta";
-		echo "<br />";
-		die (print_r (mssql_get_last_message()));
-	}
-	$actualizado = array();
-	$mensaje = "Error al ingresar precios";
-	mysql_query ("BEGIN");	
-	while ($rs = mssql_fetch_array($rs))
-	{
-		$query = "INSERT INTO articulos_sistemas(id_articulo_sistema, ".
-			"id_articulo_sub_familia, detallado, resumido, id_unidad) ".
-			"VALUES('%s', '%s', '%s', '%s', '%s')",
-			$rs['tCodiogProducto'], $rs['tCodigoSubFamilia'],
-			$rs['tDetallado'], $rs['tResumido'],
-			$rs['tUnidadEntrada'];
-		
-		$dato = mysql_query($query) or die("$mensaje");
-		$actualizado[] = $rs['tDetallado'];
-		
-	}
-	mysql_query("COMMIT");
-	mssql_free_result($rs);
-	mssql_close($);
-	return $actualizado; 
-}
-
-
 function producto_precios($db)
 {
 	$query = "SELECT d.id_pvd, d.fecha, d.vigencia_inicio, d.vigencia_final, a.proveedor, b.producto, d.unidad, d.valor_venta ".
