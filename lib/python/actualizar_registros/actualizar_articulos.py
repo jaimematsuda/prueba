@@ -33,7 +33,7 @@ curalma.execute(query)
 
 for row in curalma:
     print row['tDetallado']
-"""
+
     if row['tCodigoSubFamilia'] == None:
         idsubfamilia = "1203"
     else:
@@ -47,6 +47,6 @@ for row in curalma:
     curguia.execute(query)
     
 conxguia.commit()
-"""
+
 conxinfo.close()
 conxguia.close()
