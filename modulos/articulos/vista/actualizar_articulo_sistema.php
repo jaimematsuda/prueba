@@ -1,6 +1,17 @@
+<br />
 <h2>ARTICULOS DE INFOREST ACTUALIZADOS :</h2>
 <?php
-	foreach ($salida1 as $lista) {
-		echo "<p>".$lista."</p>";
+	if ($salida == "")
+	{
+		echo "<br />";
+		echo "No hay articulos por actualizar";
+	}
+	else
+	{
+		echo "<br />";
+		foreach ($salida as $lista) {
+			echo "<p>".$lista."</p>";
 	}
 ?>
+<br />
+
