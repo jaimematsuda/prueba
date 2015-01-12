@@ -102,7 +102,7 @@ function actualizar_articulo_sist()
 	}
 	mysql_query("COMMIT");
 	mssql_free_result($rs);
-	mssql_close($)
+	mssql_close($);
 	return $actualizado; 
 }
 
