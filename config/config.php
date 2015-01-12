@@ -16,15 +16,13 @@ $tema     = "menuizquierda";
 
 	//*** Parametros de conexion de la base de datos ***
 $dbhost = "localhost";
-$dbuser = "prueba";
-$dpass  = "prueba";
+$dbuser = "guiaprecios";
+$dpass  = "prat38";
 $dbname = "guiaprecios";
 
 	//*** Creando la conexión y guardandolo en la variable $db ***
 $db = mysql_connect($dbhost,$dbuser,$dpass) or die ("Error en la conexion");
 mysql_select_db($dbname,$db); // Abre la base de datos
-require_once "lib/php/funciones.php";
-require_once "lib/php/autenticacion.php";
 
 function conectar_mssql($conn)
 {
@@ -44,5 +42,8 @@ function conectar_mssql($conn)
 		return $conn;
 	}
 }
+
+require_once "lib/php/funciones.php";
+require_once "lib/php/autenticacion.php";
 
 ?>
