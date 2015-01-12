@@ -66,18 +66,12 @@ function agregar_tipologia($tipo_egreso, $descripcion, $db)
 
 function actualizar_articulo_sist()
 {
-	mysql_query ("BEGIN");	
 	$query = "SELECT id_articulo_sistema FROM articulos_sistemas ORDER BY ".
 		"id_articulo_sistema DESC LIMIT 1";
 
-	$rs = mssql_query ($query);
-	if ($rs == false)
-	{
-		echo "Error al ejecutar consulta";
-		echo "<br />";
-		die (print_r (mssql_get_last_message()));
-	}
-	$row = mssql_fetch_array($rs);
+	$mensaje = "Error al ejecutar consulta de articulos_sistemas";
+	$rs = mysql_query($query) or die("$mensaje");
+	$row = mysql_fetch_array($rs);
 	$idproducto = $row['id_articulo_sistema'];
 
 	conectar_mssql($conn);
@@ -92,6 +86,7 @@ function actualizar_articulo_sist()
 	}
 	$actualizado = array();
 	$mensaje = "Error al ingresar precios";
+	mysql_query ("BEGIN");	
 	while ($rs = mssql_fetch_array($rs))
 	{
 		$query = "INSERT INTO articulos_sistemas(id_articulo_sistema, ".
@@ -106,6 +101,8 @@ function actualizar_articulo_sist()
 		
 	}
 	mysql_query("COMMIT");
+	mssql_free_result($rs);
+	mssql_close($)
 	return $actualizado; 
 }
 
