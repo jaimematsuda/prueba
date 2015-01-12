@@ -18,6 +18,12 @@ switch($pagina){
 	case "lista_articulos":
 		$controlador = $pagina.".php";
 		break;
+	case "actualizar_articulo_sistema":
+		if((!is_editor()) && (!is_admin())) {
+			die ("Esta zona esta restringida a los editores y administaradores del sistema");
+		}
+		$controlador = $pagina.".php";
+		break;
 	case "agregar_articulo":
 		if((!is_editor()) && (!is_admin())) {
 			die ("Esta zona esta restringida a los editores y administaradores del sistema");

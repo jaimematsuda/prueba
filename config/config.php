@@ -26,4 +26,23 @@ mysql_select_db($dbname,$db); // Abre la base de datos
 require_once "lib/php/funciones.php";
 require_once "lib/php/autenticacion.php";
 
+function conectar_mssql($conn)
+{
+	$serverName = "192.168.13.2";
+	$uid = "sa";
+	$pwd = "sistemas";
+	
+	$conn = mssql_connect ($serverName, $uid, $pwd);
+	if (!$conn || !mssql_select_db ('ALMACEN', $conn))
+	{
+		echo "No es posible conectarse al servidor";
+		echo "<br />";
+		die (print_r (mssql_get_last_message()));
+	} 
+	else 
+	{
+		return $conn;
+	}
+}
+
 ?>
