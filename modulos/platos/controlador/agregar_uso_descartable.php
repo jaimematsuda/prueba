@@ -6,19 +6,26 @@
 	if(!empty($_POST)){
 		// Escapando las comillas de las cadenas
 		$tienda_tipo = addslashes(trim($_POST["tienda_tipo"]));
+		$pedido_tipo = addslashes(trim($_POST["pedido_tipo"]));
 		$area = addslashes(trim($_POST["area"]));
 		$plato = addslashes(trim($_POST["plato"]));
 		$uso_para1 = addslashes(trim($_POST["uso_para1"]));
 		$descartable1 = addslashes(trim($_POST["descartable1"]));
+		$cantidad1 = addslashes(trim($_POST["cantidad1"]));
 		$uso_para2 = addslashes(trim($_POST["uso_para2"]));
 		$descartable2 = addslashes(trim($_POST["descartable2"]));
+		$cantidad2 = addslashes(trim($_POST["cantidad2"]));
 		$uso_para3 = addslashes(trim($_POST["uso_para3"]));
 		$descartable3 = addslashes(trim($_POST["descartable3"]));
+		$cantidad3 = addslashes(trim($_POST["cantidad3"]));
 		$uso_para4 = addslashes(trim($_POST["uso_para4"]));
 		$descartable4 = addslashes(trim($_POST["descartable4"]));
-		if (agregar_uso_descartable($tienda_tipo, $area, $plato, 
-			array($uso_para1=>$descartable1, $uso_para2=>$descartable2, $uso_para3=> 
-			$descartable3, $uso_para4=>$descartable4), $db)){
+		$cantidad4 = addslashes(trim($_POST["cantidad4"]));
+		if (agregar_uso_descartable($tienda_tipo, $pedido_tipo, $area, $plato,
+			array(array($uso_para1, $descartable1, $cantidad1), 
+			array($uso_para2, $descartable2, $cantidad2), 
+			array($uso_para3, $descartable3, $cantidad3), 
+			array($uso_para4, $descartable4, $cantidad4)), $db)){
 			echo "<script>alert('El registro se creo con exito')</script>";
 		}else{
 			mysql_query("ROLLBACK");
