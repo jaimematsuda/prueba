@@ -53,8 +53,7 @@ function agregar_uso_descartable($tienda_tipo, $pedido_tipo, $area, $plato,
 
 	//*** Bucle para recorrer array de uso_para y buscar id del descartable ***
 	foreach ($uso_descartable as $listarry => $uso_para) {
-		if (!empty($uso_para)) {
-
+		if (!empty($uso_para[0])) {
 			$query = "SELECT id_articulo_sistema FROM articulos_sistemas WHERE detallado = '".
 				utf8_decode($uso_para[1])."'";
 			$fid = mysql_query($query, $db) or die (mysql_query()."<br /> ".$query);
@@ -67,9 +66,8 @@ function agregar_uso_descartable($tienda_tipo, $pedido_tipo, $area, $plato,
 			if ($id = mysql_fetch_assoc($fid)) {
 				$id_uso_descartable = $id['id_uso_descartable'];
 			}else{
-				dump($id_articulo_sistema, true);
 				$query = "INSERT INTO usos_descartables(uso_para, id_articulo_sistema) ".
-					"VALUES(UPPER('".utf8_encode($uso_para[0])."'), '".$id_articulo_sistema."')";
+					"VALUES(UPPER('".utf8_decode($uso_para[0])."'), '".$id_articulo_sistema."')";
 				$rs = mysql_query($query, $db) or die ("error al ingresar datos de Usos Descartables");
 
 // NOS QUEDAMOS ACA NO INGRESA USOS DESCARTABLES????? LUEGO VER id_uso_descartable
