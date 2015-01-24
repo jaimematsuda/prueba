@@ -505,36 +505,37 @@ function data_to_table_descartable_patio($dataplato, $datadesca, $tienda_tipo, $
 
 		/* Imprimiendo Datos */
 		foreach($dataplato as $filaplato){
-			if ($filaplato['tienda_tipo'] == $tienda_tipo && $filaplato['pedido_tipo'] == 'SALON') {
+			if ($filaplato['tienda_tipo'] == $tienda_tipo) {
 				echo "<tr class='fila'>\n";
 				echo "<td class='celda' id='plato'>".utf8_encode($filaplato['plato'])."</td>\n";
 				$pedido_tipo = $filaplato['pedido_tipo'];
 			}
+			$salon = "";
+			$llevar = "";
 			foreach($datadesca as $filadesca) {
-				if ($filadesca['id_plato'] == $filaplato['id_plato'] && $filaplato['tienda_tipo'] == $tienda_tipo) {
-					$filaswitch = $filadesca['detallado'];
-					switch  ($filaswitch) {
-						case "PRINCIPAL":
-							$principal = $filadesca['detallado'];
-							break;
-						case (preg_match('/PAPA*/', $filaswitch) ? true : false):
-							$papa = $filadesca['detallado'];
-							break;
-						case (preg_match('/ENSALADA*/', $filaswitch) ? true : false):
-							$ensalada = $filadesca['detallado'];
-							break;
-						case "POSTRE":
-							$postre = $filadesca['detallado'];
-							break;
-						
+				if ($filadesca['id_plato'] == $filaplato['id_plato']) {
+					if ($filadesca['id_pedido_tipo'] == 1) {
+						if ($filadesca['cantidad'] > 1) {
+							$salon .= "+ ".$filadesca['cantidad']." ".$filadesca['detallado']." ";
+						} else {
+							$salon .= "+ ".$filadesca['detallado']." ";
+						}
+					}
+					if ($filadesca['id_pedido_tipo'] == 2) {
+						if ($filadesca['cantidad'] > 1) {
+							$llevar .= "+ ".$filadesca['cantidad']." ".$filadesca['detallado']." ";
+						} else {
+							$llevar .= "+ ".$filadesca['detallado']." ";
+						}
 					}
 				}
 			}
-			if ($filaplato['tienda_tipo'] == $tienda_tipo && $filaplato['area'] == $area) {
-				echo "<td class='celda' id='salon'>".utf8_encode($salon)."</td>\n";
-				echo "<td class='celda' id='llevar'>".utf8_encode($llevar)."</td>\n";
-				echo "</tr>\n";
-			}
+			$salonok = substr($salon, 2);
+			$llevarok = substr($llevar, 2);
+			echo "<td class='celda' id='salon'>".utf8_encode($salonok)."</td>\n";
+			echo "<td class='celda' id='llevar'>".utf8_encode($llevarok)."</td>\n";
+			echo "</tr>\n";
+			
 		}
 	}
 }

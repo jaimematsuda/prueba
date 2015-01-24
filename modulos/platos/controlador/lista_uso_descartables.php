@@ -29,9 +29,6 @@
 	$listadescapatio = lista_descartables('PATIO', $db);
 	$listaplatosolari = lista_platos('SOLARI', $db);
 	$listadescasolari = lista_descartables('SOLARI', $db);
-//	$listapatio = lista_descartables_patio($db);
-//	dump($listaplato);
-//	dump($listadesca, true);
 
 	require_once "temas/$tema/tema.php"; 
 ?>
