@@ -43,13 +43,19 @@ function agregar_uso_descartable($tienda_tipo, $pedido_tipo, $area, $plato,
 	}
 
 
-	//*** Inserta la relacion rel_tiendas_platos ***
-	$query = "INSERT INTO rel_tiendas_platos(id_tienda_tipo, id_pedido_tipo, ".
-		"id_plato, activo) VALUES(".$id_tienda_tipo.", ".$id_pedido_tipo.", ".
-		$id_plato.", 1)";
-	$rs = mysql_query($query, $db) or die ("error al ingresar ARTICULO DOCUMENTO");
-	$id_rel_tienda_plato = mysql_insert_id();
-
+	//*** Busca el id de la relacion tiendas_platos si encuentra Inserta la relacion  ***
+	$query = "SELECT id_rel_tienda_plato FROM rel_tiendas_platos WHERE id_tienda_tipo = 
+		$id_tienda_tipo AND id_pedido_tipo =$id_pedido_tipo AND id_plato = $id_plato";
+	$fid = mysql_query($query, $db) or die (mysql_query()."<br />".$query);
+	if ($id = mysql_fetch_assoc($fid)) {
+		$id_rel_tienda_plato = $id['id_rel_tienda_plato'];
+	} else {
+		$query = "INSERT INTO rel_tiendas_platos(id_tienda_tipo, id_pedido_tipo, ".
+			"id_plato, activo) VALUES(".$id_tienda_tipo.", ".$id_pedido_tipo.", ".
+			$id_plato.", 1)";
+		$rs = mysql_query($query, $db) or die ("error al ingresar Relacion Tiendas_Platos");
+		$id_rel_tienda_plato = mysql_insert_id();
+	}
 
 	//*** Bucle para recorrer array de uso_para y buscar id del descartable ***
 	foreach ($uso_descartable as $listarry => $uso_para) {
@@ -69,8 +75,6 @@ function agregar_uso_descartable($tienda_tipo, $pedido_tipo, $area, $plato,
 				$query = "INSERT INTO usos_descartables(uso_para, id_articulo_sistema) ".
 					"VALUES(UPPER('".utf8_decode($uso_para[0])."'), '".$id_articulo_sistema."')";
 				$rs = mysql_query($query, $db) or die ("error al ingresar datos de Usos Descartables");
-
-// NOS QUEDAMOS ACA NO INGRESA USOS DESCARTABLES????? LUEGO VER id_uso_descartable
 				$id_uso_descartable = mysql_insert_id();
 			}
 

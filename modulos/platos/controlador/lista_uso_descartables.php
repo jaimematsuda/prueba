@@ -23,8 +23,15 @@
 				//]]>";
 	
 	require_once "modelo/lista.php";
-	$listaplato = lista_platos($db);
-	$listadesca = lista_descartables($db);
+	$listaplatonorkys = lista_platos('NORKYS', $db);
+	$listadescanorkys = lista_descartables('NORKYS', $db);
+	$listaplatopatio = lista_platos('PATIO', $db);
+	$listadescapatio = lista_descartables('PATIO', $db);
+	$listaplatosolari = lista_platos('SOLARI', $db);
+	$listadescasolari = lista_descartables('SOLARI', $db);
+//	$listapatio = lista_descartables_patio($db);
+//	dump($listaplato);
+//	dump($listadesca, true);
 
 	require_once "temas/$tema/tema.php"; 
 ?>

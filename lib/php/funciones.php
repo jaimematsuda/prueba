@@ -433,7 +433,7 @@ function data_to_table_descartable($dataplato, $datadesca, $tienda_tipo, $area, 
 				echo "<th class='celda_cabecera'>".$header."</th>\n";
 			} 
 		}else{
-			foreach($datapalto[0] as $header=>$dato){
+			foreach($dataplato[0] as $header=>$dato){
 				echo "<th class='celda_cabecera'>".utf8_decode($header)."</th>\n";
 			} 
 		}
@@ -481,6 +481,63 @@ function data_to_table_descartable($dataplato, $datadesca, $tienda_tipo, $area, 
 }
 
 
+	//*** Agrega los datos de una consulta a una tabla de uso de descartable para patio*** 
+function data_to_table_descartable_patio($dataplato, $datadesca, $tienda_tipo, $area, $headers=array())
+{
+	if(!empty($dataplato)){
+		echo "<tr class='fila'>\n";
+			echo "<th colspan='5'>\n";
+				echo $area;
+			echo "</th>\n";
+		echo "<tr>\n";
+		/* Imprimiendo Cabeceras */
+		echo "<tr class='fila_cabecera'>\n";
+		if(!empty($headers)){
+			foreach($headers as $header){
+				echo "<th class='celda_cabecera'>".$header."</th>\n";
+			} 
+		}else{
+			foreach($dataplato[0] as $header=>$dato){
+				echo "<th class='celda_cabecera'>".utf8_decode($header)."</th>\n";
+			} 
+		}
+		echo "</tr>\n";
+
+		/* Imprimiendo Datos */
+		foreach($dataplato as $filaplato){
+			if ($filaplato['tienda_tipo'] == $tienda_tipo && $filaplato['pedido_tipo'] == 'SALON') {
+				echo "<tr class='fila'>\n";
+				echo "<td class='celda' id='plato'>".utf8_encode($filaplato['plato'])."</td>\n";
+				$pedido_tipo = $filaplato['pedido_tipo'];
+			}
+			foreach($datadesca as $filadesca) {
+				if ($filadesca['id_plato'] == $filaplato['id_plato'] && $filaplato['tienda_tipo'] == $tienda_tipo) {
+					$filaswitch = $filadesca['detallado'];
+					switch  ($filaswitch) {
+						case "PRINCIPAL":
+							$principal = $filadesca['detallado'];
+							break;
+						case (preg_match('/PAPA*/', $filaswitch) ? true : false):
+							$papa = $filadesca['detallado'];
+							break;
+						case (preg_match('/ENSALADA*/', $filaswitch) ? true : false):
+							$ensalada = $filadesca['detallado'];
+							break;
+						case "POSTRE":
+							$postre = $filadesca['detallado'];
+							break;
+						
+					}
+				}
+			}
+			if ($filaplato['tienda_tipo'] == $tienda_tipo && $filaplato['area'] == $area) {
+				echo "<td class='celda' id='salon'>".utf8_encode($salon)."</td>\n";
+				echo "<td class='celda' id='llevar'>".utf8_encode($llevar)."</td>\n";
+				echo "</tr>\n";
+			}
+		}
+	}
+}
 
 	//*** Convierte el formato de fecha de MYSQL al formato pe y viceversa ***
 function cform_fecha($form_fecha)

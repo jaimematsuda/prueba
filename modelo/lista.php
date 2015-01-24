@@ -61,7 +61,7 @@ function lista_tipo_egreso($db)
 }
 
 
-function lista_platos($db)
+function lista_platos($tienda_tipo, $db)
 {
 	$query = "SELECT tt.tienda_tipo, pt.pedido_tipo, a.area, pl.id_plato, pl.plato ".
 	"FROM ".
@@ -70,20 +70,22 @@ function lista_platos($db)
 	"INNER JOIN areas AS a ON a.id_area = pl.id_area ".
 	"INNER JOIN tiendas_tipos AS tt ON tt.id_tienda_tipo = tp.id_tienda_tipo ".
 	"INNER JOIN pedidos_tipos AS pt ON tp.id_pedido_tipo = pt.id_pedido_tipo ".
+	"WHERE tt.tienda_tipo = '$tienda_tipo' ".
 	"ORDER BY a.area, pl.plato";
 	$dataplato = rs_table($query,$db);
 //	dump($dataplato, true);
 	return $dataplato;
 }
 
-function lista_descartables($db)
+function lista_descartables($tienda_tipo, $db)
 {
-	$query = "SELECT tp.id_plato, ud.uso_para, ay.detallado ".
+	$query = "SELECT tp.id_pedido_tipo, tp.id_plato, ud.uso_para, ay.detallado, pd.cantidad ".
 	"FROM ".
 	"rel_platos_descartables AS pd ".
 	"INNER JOIN rel_tiendas_platos AS tp ON tp.id_rel_tienda_plato = pd.id_rel_tienda_plato ".
 	"INNER JOIN usos_descartables AS ud ON ud.id_uso_descartable = pd.id_uso_descartable ".
 	"INNER JOIN articulos_sistemas AS ay ON ay.id_articulo_sistema = ud.id_articulo_sistema ".
+	"WHERE tp.id_tienda_tipo = (SELECT id_tienda_tipo FROM tiendas_tipos WHERE tienda_tipo = '$tienda_tipo') ".
 	"ORDER BY tp.id_plato";
 	$datadesca = rs_table($query,$db);
 //	dump($datadesca, true);

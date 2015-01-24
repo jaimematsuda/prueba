@@ -104,20 +104,31 @@
 }
 
 .tabs input[type="radio"].tab-selector-1:hover + label.tab-label-1 ~ .clear-shadow{
-    z-index: 2;
+    z-index: 3;
 }
 
 .tabs input[type="radio"].tab-selector-2:hover + label.tab-label-2 ~ .clear-shadow {
+    z-index: 2;
+}
+
+.tabs input[type="radio"].tab-selector-3:hover + label.tab-label-3 ~ .clear-shadow {
     z-index: 1;
+}
+.tabs input[type="radio"].tab-selector-4:hover + label.tab-label-4 ~ .clear-shadow {
+    z-index: 0;
 }
 
 .tabs label:first-of-type {
-    z-index: 2;
+    z-index: 3;
     box-shadow: 2px 0 2px rgba(0,0,0,0.9), -2px 0 3px -2px rgba(0,0,0,0.9);
 }
 
 .tab-label-2 {
     z-index: 2;
+}
+
+.tab-label-3 {
+    z-index: 1;
 }
 
 .tabs input[type="radio"]:checked + label {
