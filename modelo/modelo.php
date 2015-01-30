@@ -37,6 +37,13 @@ function select_list_edit($query, $db)
 	return $data;
 }
 
+	//*** Devuelve una lista para un combo segun el query que envia el controlador ***
+function select_list_combo($query, $db)
+{
+	$data = rs_table($query,$db);
+	return $data;
+}
+
 	//*** Modifica un registro segun el query que envia el controlador ***
 function reg_modify($query,$db) {
     exec_query($query,true,$db);

@@ -72,6 +72,21 @@ function exec_query($query,$transact=true,$db)
 	return $fetch;
 }
 
+	//*** Agrega los datos de una consulta a un combo box ***
+function data_combo_box($data)
+{
+	if(!empty($data)){
+		$select_name = key($data[0]);
+		echo "<select name='$select_name'>\n";
+		foreach($data as $data1) {
+			foreach($data1 as $clave=>$dato) {
+				echo "<option value='".utf8_encode($dato)."'>".utf8_encode($dato)."</option>\n";
+			}	
+		}
+	echo "</select>";
+	}
+}
+
 	//*** Agrega los datos de una consulta a una tabla ***
 function data_to_table($data,$headers=array())
 {

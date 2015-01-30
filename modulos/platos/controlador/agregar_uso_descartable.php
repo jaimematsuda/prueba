@@ -2,7 +2,14 @@
 	$mensaje = "";
 
 	require "modelo/plato.php";
+	require "modelo/modelo.php";
 
+	$query_tts = "SELECT tienda_tipo FROM tiendas_tipos ORDER BY tienda_tipo";
+	$data_tts = select_list_combo($query_tts, $db);
+	$query_areas = "SELECT area FROM areas ORDER BY area";
+	$data_areas = select_list_combo($query_areas, $db);
+	$query_tp = "SELECT pedido_tipo FROM pedidos_tipos ORDER BY id_pedido_tipo";
+	$data_tp = select_list_combo($query_tp, $db);
 	if(!empty($_POST)){
 		// Escapando las comillas de las cadenas
 		$tienda_tipo = addslashes(trim($_POST["tienda_tipo"]));
@@ -44,24 +51,54 @@
 	$js_vista[] = "lib/jquery/jquery_plugin/jquery.validate.min.js";
 
 	$jq_vista = "$(document).ready(function(){
-					$(\"#proveedor\").autocomplete({
-						source: \"lib/php/json/buscarproveedor.php\",
+					$(\"#plato\").autocomplete({
+						source: \"lib/php/json/buscarplato.php\",
 						minLengh: 2,
 					});
-					$(\"#articulo_sistema\").autocomplete({
-						source: \"lib/php/json/buscararticulosistema.php\",
+					$(\"#uso_para1\").autocomplete({
+						source: \"lib/php/json/buscarusopara.php\",
 						minLengh: 2,
 					});
-					$(\"#articulo_sistema\").focusout(function(){
-						$.ajax({
-							url: \"lib/php/json/buscarunidad.php\",
-							type: 'POST',
-							dataType: 'json',
-							data: {articulosistema: $(\"#articulo_sistema\").val()},
-						}).done(function(unidad){
-							$(\"#unidad\").val(unidad);
-						});
-					})
+					$(\"#descartable1\").autocomplete({
+						source: \"lib/php/json/buscardescartable.php\",
+						minLengh: 2,
+					});
+					$(\"#uso_para2\").autocomplete({
+						source: \"lib/php/json/buscarusopara.php\",
+						minLengh: 2,
+					});
+					$(\"#descartable2\").autocomplete({
+						source: \"lib/php/json/buscardescartable.php\",
+						minLengh: 2,
+					});
+					$(\"#uso_para3\").autocomplete({
+						source: \"lib/php/json/buscarusopara.php\",
+						minLengh: 2,
+					});
+					$(\"#descartable3\").autocomplete({
+						source: \"lib/php/json/buscardescartable.php\",
+						minLengh: 2,
+					});
+					$(\"#uso_para4\").autocomplete({
+						source: \"lib/php/json/buscarusopara.php\",
+						minLengh: 2,
+					});
+					$(\"#descartable4\").autocomplete({
+						source: \"lib/php/json/buscardescartable.php\",
+						minLengh: 2,
+					});
+				});";
+
+	require_once "temas/$tema/tema.php"; 
+?>
+				});";
+
+	require_once "temas/$tema/tema.php"; 
+?>
+				});";
+
+	require_once "temas/$tema/tema.php"; 
+?>
 				});";
 
 	require_once "temas/$tema/tema.php"; 
