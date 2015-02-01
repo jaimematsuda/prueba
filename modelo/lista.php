@@ -63,7 +63,7 @@ function lista_tipo_egreso($db)
 
 function lista_platos($tienda_tipo, $db)
 {
-	$query = "SELECT tt.tienda_tipo, pt.pedido_tipo, a.area, pl.id_plato, pl.plato ".
+	$query = "SELECT pl.plato, tt.tienda_tipo, tp.id_pedido_tipo, pt.pedido_tipo, a.area, pl.id_plato ".
 	"FROM ".
 	"rel_tiendas_platos AS tp ".
 	"INNER JOIN platos AS pl ON pl.id_plato = tp.id_plato ".
@@ -71,6 +71,7 @@ function lista_platos($tienda_tipo, $db)
 	"INNER JOIN tiendas_tipos AS tt ON tt.id_tienda_tipo = tp.id_tienda_tipo ".
 	"INNER JOIN pedidos_tipos AS pt ON tp.id_pedido_tipo = pt.id_pedido_tipo ".
 	"WHERE tt.tienda_tipo = '$tienda_tipo' ".
+	"GROUP BY pl.plato ".
 	"ORDER BY a.area, pl.plato";
 	$dataplato = rs_table($query,$db);
 //	dump($dataplato, true);
